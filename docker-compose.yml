@@ -16,6 +16,7 @@ services:
       - ./filebeat.yml:/usr/share/filebeat/filebeat.yml
       - ./modules/00-pcap-forensics/logs:/logs
       - ./modules/00-pcap-forensics/sample-pcaps/:/sample-pcaps/
+      - ./modules.d/zeek.yml:/usr/share/filebeat/modules.d/zeek.yml:ro
     depends_on:
       - elasticsearch
 
