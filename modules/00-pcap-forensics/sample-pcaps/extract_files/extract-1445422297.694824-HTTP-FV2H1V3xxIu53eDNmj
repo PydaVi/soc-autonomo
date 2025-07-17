@@ -1,0 +1,84 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html;CHARSET=iso-8859-1">
+<META NAME="Description" CONTENT="Factory Line - Ethernet Installation System">
+<META NAME="Copyright" CONTENT="Phoenix Contact GmbH & Co">
+<META NAME="Version" CONTENT="1.1">
+<META NAME="Keywords" CONTENT="Factory, Line, Ethernet, Installation, Webbased, Management, Inline, FL IL 24 BK-PAC">
+<TITLE>FL IL 24 BK-PAC - Homepage</TITLE>
+<LINK REL="SHORTCUT ICON" HREF="favicon.ico">
+<link rel="stylesheet" href="phoenix_fl.css">
+<script language="JavaScript" src="phoenix_fl.js"></script>
+</HEAD>
+
+<BODY>
+<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="750">
+  <TR> 
+    <TD WIDTH="200" VALIGN="TOP"> 
+      <TABLE BORDER="1" CELLPADDING="2" CELLSPACING="0" WIDTH="100%">
+        <TR> 
+          <TD ALIGN="CENTER"> <A HREF="http://www.phoenixcontact.com" target="_blank"><IMG SRC="img/pxclogo.gif" WIDTH="142"
+                                           HEIGHT="36" ALIGN="BOTTOM" ALT="Phoenix Contact Logo" BORDER="0" class="logo"></A><br>
+            <img src="img/device_s.gif" width="72" height="72" alt="FL IL 24 BK-PAC" class="devicesymbol"><br>
+            <span class="devicetyp">FL IL 24 BK-PAC</span> </TD>
+        </TR>
+        <TR> 
+          <TD VALIGN="TOP"> 
+            <TABLE BORDER="0" CELLPADDING="2" CELLSPACING="0" WIDTH="100%" class="tablecolor">
+              <TR> 
+                <TD COLSPAN="3" class="menu">[ <A HREF="generalinst.htm">General 
+                  Instructions</A> ]</TD>
+              </TR>
+              <TR> 
+                <TD COLSPAN="3" class="menu">[ <A HREF="deviceinfo.htm">Device 
+                  Information</A> ]</TD>
+              </TR>
+              <TR> 
+                <TD COLSPAN="3" class="menu"> [ <A HREF="ipconfig.htm">Device 
+                  Configuration</A> ]</TD>
+              </TR>
+              <TR> 
+                <TD COLSPAN="3" class="menu">[ <A HREF="services.htm">Inline Station</A> ]</TD>
+              </TR>
+            </TABLE>
+          </TD>
+        </TR>
+      </TABLE>
+    </TD>
+    <TD VALIGN="TOP" ALIGN="CENTER" WIDTH="550"> 
+      <table width="100%" border="1" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td> 
+            <table width="100%" border="0" cellspacing="0" cellpadding="2">
+              <tr class="tablecolor"> 
+                <td width="60%" class="bmk" >FL IL 24 BK&nbsp;</td>
+                <td width="40%" class="bmk_zeit" > 
+                  <p align="right">&nbsp; 
+                    <script language="JavaScript">
+                                           <!--
+                                           document.write(head_part1());
+                                           document.write(head_part2());
+                                           document.write(head_part3());
+                                           //-->
+                                   </script>
+                  </p>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+      <br>
+      <img name="device" src="img/device.gif" width="270" height="420" border="0" usemap="#map_IL24BK" alt="FL IL 24 BK-PAC">
+      <map name="map_IL24BK"> <!-- <area shape="rect" coords="22,282,77,336" href="" > --> 
+        <area shape="rect" coords="6,147,58,289" href="local_diagnostics.htm#statusled_ethernet" alt="Ethernet"> 
+        <area shape="rect" coords="230,59,265,123" href="local_diagnostics.htm#statusled_powersupply" alt="Power Supply"> 
+        <area shape="rect" coords="15,49,73,98" href="local_diagnostics.htm#7segment" alt="7-Segment Display"> 
+      </map>
+      </TD>
+  </TR>
+</TABLE>
+<p>&nbsp;</p>
+</BODY>
+</HTML>

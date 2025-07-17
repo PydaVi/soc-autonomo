@@ -1,0 +1,244 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html;CHARSET=iso-8859-1">
+<TITLE>FL IL 24 BK-PAC&nbsp;- Device Information: General</TITLE>
+<link rel="stylesheet" href="phoenix_fl.css">
+<script language="JavaScript" src="phoenix_fl.js"></script>
+
+</HEAD>
+<BODY>
+<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="750">
+  <TR> 
+    <TD WIDTH="200" VALIGN="TOP"> 
+      <TABLE BORDER="1" CELLPADDING="2" CELLSPACING="0" WIDTH="100%">
+        <TR> 
+          <TD ALIGN="CENTER"> <A HREF="http://www.phoenixcontact.com" target="_blank"><IMG SRC="img/pxclogo.gif" WIDTH="142"
+                                           HEIGHT="36" ALIGN="BOTTOM" ALT="Phoenix Contact Logo" BORDER="0" class="logo"></A><br>
+            <img src="img/device_s.gif" width="72" height="72" alt="FL IL 24 BK-PAC" class="devicesymbol"><br>
+            <span class="devicetyp">FL IL 24 BK-PAC</span> </TD>
+        </TR>
+        <TR> 
+          <TD VALIGN="TOP"> 
+            <TABLE BORDER="0" CELLPADDING="2" CELLSPACING="0" WIDTH="100%" class="tablecolor" >
+              <TR> 
+                <TD COLSPAN="3" class="menu">[ <A HREF="generalinst.htm">General 
+                  Instructions</A> ]</TD>
+              </TR>
+              <TR> 
+                <TD COLSPAN="3" class="menuopen">Device Information</TD>
+              </TR>
+              <TR> 
+                <TD WIDTH="10">&nbsp;</TD>
+                <TD WIDTH="15"><IMG SRC="img/sel.gif" WIDTH="11" HEIGHT="11" ALIGN="MIDDLE" BORDER="0"></TD>
+                <TD class="menu2"><A HREF="deviceinfo.htm">General</A></TD>
+              </TR>
+              <TR> 
+                <TD WIDTH="10">&nbsp;</TD>
+                <TD WIDTH="15">&nbsp;</TD>
+                <TD class="menu2"><A HREF="techdata.htm">Technical Data</A></TD>
+              </TR>
+              <TR> 
+                <TD WIDTH="10">&nbsp;</TD>
+                <TD WIDTH="15">&nbsp;</TD>
+                <TD class="menu2"><A HREF="hwinstall.htm">Hardware Installation</A></TD>
+              </TR>
+              <TR> 
+                <TD WIDTH="10">&nbsp;</TD>
+                <TD WIDTH="15">&nbsp;</TD>
+                <TD class="menu2"><A HREF="local_diagnostics.htm">Local Diagnostics</A></TD>
+              </TR>
+              <TR> 
+                <TD COLSPAN="3" class="menu">[ <A HREF="ipconfig.htm">Device Configuration</A> 
+                  ]</TD>
+              </TR>
+              <TR> 
+                <TD COLSPAN="3" class="menu">[ <A HREF="services.htm">Inline Station</A> ]</TD>
+              </TR>
+              <TR> 
+                <TD COLSPAN="3" class="menu">[ <A HREF="index.htm">Home</A> ]</TD>
+              </TR>
+            </TABLE>
+          </TD>
+        </TR>
+      </TABLE>
+    </TD>
+    <TD VALIGN="TOP" WIDTH="550"> 
+      <table width="100%" border="1" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td> 
+            <table width="100%" border="0" cellspacing="0" cellpadding="2">
+              <tr class="tablecolor"> 
+                <td width="60%" class="bmk" >FL IL 24 BK&nbsp;</td>
+                <td width="40%" class="bmk_zeit" > 
+                  <p align="right">&nbsp; 
+                    <script language="JavaScript">
+                                           <!--
+                                           document.write(head_part1());
+                                           document.write(head_part2());
+                                           document.write(head_part3());
+                                           //-->
+                                   </script>
+                  </p>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+      <BR>      
+      <TABLE BORDER="1" CELLPADDING="2" CELLSPACING="0" WIDTH="90%" align="right">
+        <TR> 
+          <th COLSPAN="2">Device Information</th>
+        </TR>
+        <TR> 
+          <TD WIDTH="40%"> 
+            <p>Vendor </p>
+          </TD>
+          <TD WIDTH="60%" class="tablecolor"> 
+            <p>Phoenix Contact GmbH &amp; Co. KG</p>
+          </TD>
+        </TR>
+        <TR> 
+          <TD WIDTH="40%"> 
+              <p class="indented">Address</p>
+          </TD>
+          <TD WIDTH="60%" class="tablecolor"> 
+            <p class="indented">P.O. Box 1341, D-32819 Blomberg</p>
+          </TD>
+        </TR>
+        <TR> 
+          <TD WIDTH="40%" > 
+              <p class="indented">Phone </p>
+        </TD>
+          <TD WIDTH="60%" class="tablecolor"> 
+            <p class="indented">+49 -(0)5235 -3-00</p>
+          </TD>
+        </TR>
+        <TR> 
+          <TD WIDTH="40%">
+              <p class="indented">Internet </p>
+       </TD>
+          <TD WIDTH="60%" class="tablecolor"><SPAN class="indented"><A HREF="http://www.phoenixcontact.com" target="_blank" class="plink">www.phoenixcontact.com</A></SPAN> 
+          </TD>
+        </TR>
+        <TR> 
+          <TD WIDTH="40%"  > 
+            <p>Type </p>
+          </TD>
+          <TD WIDTH="60%" class="tablecolor"> 
+            <p>FL IL 24 BK-PAC</p>
+          </TD>
+        </TR>
+        <TR> 
+          <TD WIDTH="40%"  > 
+            <p>Order No. </p>
+          </TD>
+          <TD WIDTH="60%" class="tablecolor"     > 
+            <p>28 62 31 4</p>
+          </TD>
+        </TR>
+        <TR> 
+          <TD WIDTH="40%"  > 
+            <p>Serial Number</p>
+          </TD>
+          <TD WIDTH="60%" class="tablecolor"     > 
+            <p>76666850</p>
+          </TD>
+        </TR>
+        <TR> 
+          <TD WIDTH="40%"  > 
+            <p>Bootloader Version </p>
+          </TD>
+          <TD WIDTH="60%" class="tablecolor"     > 
+            <p>1.83</p>
+          </TD>
+        </TR>
+        <TR> 
+          <TD WIDTH="40%"  > 
+            <p>Firmware Version </p>
+          </TD>
+          <TD WIDTH="60%" class="tablecolor"     > 
+            <p>1.22 </p>
+          </TD>
+        </TR>
+        <TR> 
+          <TD WIDTH="40%"  > 
+            <p>Hardware Version </p>
+          </TD>
+          <TD WIDTH="60%" class="tablecolor"     > 
+            <p>13</p>
+          </TD>
+        </TR>
+        <TR> 
+          <TD WIDTH="40%"  > 
+            <p>MAC Address </p>
+          </TD>
+          <TD WIDTH="60%" class="tablecolor"     > 
+            <p>00:A0:45:6F:4B:83</p>
+          </TD>
+        </TR>
+        <TR> 
+          <TD COLSPAN="2" class="tablehead2">user defined: </TD>
+        </TR>
+        <TR> 
+          <TD WIDTH="40%"  > 
+            <p>Name of Device </p>
+          </TD>
+          <TD WIDTH="60%" class="tablecolor"     > 
+            <p>FL IL 24 BK&nbsp;</p>
+          </TD>
+        </TR>
+        <TR> 
+          <TD WIDTH="40%"><p>System Description </p>
+          </TD>
+          <TD WIDTH="60%" class="tablecolor"     > 
+            <p>Ethernet bus terminal&nbsp;</p>
+          </TD>
+        </TR>
+        <TR> 
+          <TD WIDTH="40%"  > 
+            <p>Physical Location</p>
+          </TD>
+          <TD WIDTH="60%" class="tablecolor"     > 
+            <p>Unknown&nbsp;</p>
+          </TD>
+        </TR>
+        <TR> 
+          <TD WIDTH="40%"  > 
+            <p>Contact</p>
+          </TD>
+          <TD WIDTH="60%" class="tablecolor"     > 
+            <p>Unknown&nbsp;</p>
+          </TD>
+        </TR>
+        <TR> 
+          <TD WIDTH="40%"  > 
+            <p>IP Address</p>
+          </TD>
+          <TD WIDTH="60%" class="tablecolor"     > 
+            <p>192.168.88.20</p>
+          </TD>
+        </TR>
+        <TR> 
+          <TD WIDTH="40%"  > 
+            <p>Subnet Mask</p>
+          </TD>
+          <TD WIDTH="60%" class="tablecolor"     > 
+            <p>255.255.255.0</p>
+          </TD>
+        </TR>
+        <TR> 
+          <TD WIDTH="40%"  > 
+            <p>Default-Gateway</p>
+          </TD>
+          <TD WIDTH="60%" class="tablecolor"     > 
+            <p>192.168.88.1</p>
+          </TD>
+        </TR>
+      </TABLE>
+    </TD>
+</TABLE>
+<p></P>
+</BODY>
+</HTML>

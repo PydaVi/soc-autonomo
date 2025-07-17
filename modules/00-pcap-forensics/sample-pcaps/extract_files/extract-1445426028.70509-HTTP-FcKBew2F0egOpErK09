@@ -1,0 +1,80 @@
+// JavaScript for table item designation
+// Created: 11/2000 Sven Grinder
+// Changed: 11/2001 Sven Grinder
+// Version 1.01
+
+
+// calls from table item designation
+function head_part1() {
+        return("last update");
+}
+
+function head_part2() {
+        return(": ");
+}
+
+function head_part3() {
+	return(fl_time());
+}
+
+
+// output date and time
+function fl_date() {
+	var jetzt = 0;
+	var monat = 0;
+	var jahr = 0;
+	var jahr_help = " ";
+	var datum = "";
+
+	jetzt = new Date();
+	datum = jetzt.getDate();
+
+	monat = jetzt.getMonth() +1;
+	if (monat < 10)
+		datum = datum + ".0" + monat;
+	else
+		datum = datum + "." + monat;
+
+	jahr = jetzt.getYear();
+	
+	if (jahr >= 2000)
+		datum = datum + "." + jahr;
+	else {
+		if (jahr >= 100) {
+			jahr = jahr - 100;
+			if (jahr <10) jahr = "0" + jahr;
+			datum = datum + "." + "20" + jahr;
+		}	
+		else {
+			if (jahr <10) jahr = "0" + jahr;
+			datum = datum + "." + "19" + jahr;
+		}
+	}
+	return(datum);
+}
+
+
+function fl_time() {
+	var jetzt = 0;
+	var minuten = 0;
+	var sekunden = 0;	
+	var uhrzeit = "";
+
+	jetzt = new Date();
+
+	uhrzeit = jetzt.getHours();
+
+	minuten = jetzt.getMinutes();
+	if (minuten <10)
+		uhrzeit = uhrzeit + ":0" + minuten;
+	else
+		uhrzeit = uhrzeit + ":" + minuten;
+
+	sekunden = jetzt.getSeconds();
+	if (sekunden <10)
+		uhrzeit = uhrzeit + ":0" + sekunden;
+	else
+		uhrzeit = uhrzeit + ":" + sekunden;
+
+	return(uhrzeit);
+}

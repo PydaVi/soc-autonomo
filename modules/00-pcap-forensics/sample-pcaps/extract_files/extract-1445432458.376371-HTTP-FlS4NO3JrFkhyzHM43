@@ -1,0 +1,268 @@
+function checkSubmit(form)
+{
+	if (form.p_used.value=="0") return true;
+	if (!checkServer(form.smtpsvr)) return false;
+	/*if(form.smtpsvr.value == "")
+	{
+		alert("Please provide the SMTP server address");
+		form.smtpsvr.select();
+		return false;
+	}*/
+	if(form.smtp_mode.value != "SMTP")
+	{
+		if(form.smtp_user.value == "")
+		{
+			alert("Please provide the SMTP user name.");
+			form.smtp_user.select();
+			return false;
+		}
+		if(form.smtp_pwd.value == "")
+		{
+			alert("Please provide the password.");
+			form.smtp_pwd.select();
+			return false;
+		}
+		if(form.smtp_pwdcf.value == "")
+		{
+			alert("Please confirm the password.");
+			form.smtp_pwdcf.select();
+			return false;
+		}
+/*	
+		var rTok, ret0=-1, ret1=-1, ret2=-1, ret3=-1, ret4=-1, ret5=-1, ret6=-1, ret7=-1, ret8=-1, ret9=-1;
+		rTok = /:/g;  ret0 = form.smtp_user.value.search(rTok);
+		rTok = /</g;  ret1 = form.smtp_user.value.search(rTok);
+		rTok = />/g;  ret2 = form.smtp_user.value.search(rTok);
+		rTok = /&/g;  ret3 = form.smtp_user.value.search(rTok);
+		rTok = /\'/g;  ret4 = form.smtp_user.value.search(rTok);
+		rTok = /\"/g;  ret5 = form.smtp_user.value.search(rTok);
+		rTok = /\./g;  ret6 = form.smtp_user.value.search(rTok);
+		rTok = /@/g;  ret7 = form.smtp_user.value.search(rTok);
+		rTok = /,/g;  ret8 = form.smtp_user.value.search(rTok);
+		rTok = / /g;  ret9 = form.smtp_user.value.search(rTok);
+		
+		if(ret0>=0 || ret1>=0 || ret2>=0 || ret3>=0 || ret4>=0 || ret5>=0 || ret6>=0 || ret7>=0 || ret8>=0 || ret9>=0)
+		{
+			alert("You should not use following characters in username : :< >&,\"\'.@blanks");
+			form.smtp_user.select();
+			return false;
+		}
+*/
+		if(form.smtp_pwdcf.value != form.smtp_pwd.value)
+		{
+			alert("Password mismatch. Please confirm again");
+			form.smtp_pwd.select();
+			return false;
+		}
+		
+		ret0=-1;
+		rTok = / /g;
+		ret0 = form.smtp_pwd.value.search(rTok);
+		if(ret0>=0)
+		{
+			alert("You should not use blank characters in password");
+			form.smtp_pwd.select();
+			return false;
+		}
+		/*ret0=-1;
+		rTok = / /g;
+		ret0 = form.smtp_pwdcf.value.search(rTok);
+		if(ret0>=0)
+		{
+			alert("You should not use blank characters in password");
+			form.smtp_pwdcf.select();
+			return false;
+		}*/
+	}
+	if (form.s_used.value=="1") {
+		/*if(form.s_smtpsvr.value=="")
+		{
+			alert("Please provide the SMTP server address");
+			form.s_smtpsvr.select();
+			return false;
+		}*/
+		if (!checkServer(form.s_smtpsvr)) return false;
+		if(form.s_smtp_mode.value != "SMTP")
+		{
+			if(form.s_smtp_user.value == "")
+			{
+				alert("Please provide the SMTP user name.");
+				form.s_smtp_user.select();
+				return false;
+			}
+			if(form.s_smtp_pwd.value == "")
+			{
+				alert("Please provide the password.");
+				form.s_smtp_pwd.select();
+				return false;
+			}
+			if(form.s_smtp_pwdcf.value == "")
+			{
+				alert("Please confirm the password.");
+				form.s_smtp_pwdcf.select();
+				return false;
+			}
+			if(form.s_smtp_pwdcf.value != form.s_smtp_pwd.value)
+			{
+				alert("Password mismatch. Please confirm again");
+				form.s_smtp_pwd.select();
+				return false;
+			}
+		
+			ret0=-1;
+			rTok = / /g;
+			ret0 = form.s_smtp_pwd.value.search(rTok);
+			if(ret0>=0)
+			{
+				alert("You should not use blank characters in password");
+				form.s_smtp_pwd.select();
+				return false;
+			}
+		}
+	}
+	if(form.sysmailaddr.value == "")
+	{
+		alert("Please provide the Device mail address");
+		form.sysmailaddr.select();
+		return false;
+	}
+	if(!isEmail(form.sysmailaddr)) return false;
+	return true;
+}
+
+function checkServer(element)
+{
+	if(element.value == "")
+	{
+		alert("Please provide the SMTP server name.");
+		element.select();
+		return false;
+	}
+	if(element.value.indexOf('.',0)==-1)
+	{
+		alert("The SMTP server name field requires \".\" used.\nPlease provide a valid SMTP server name.");
+		element.select();
+		return false;
+	}
+	ret0=-1;
+	rTok = / /g;
+	ret0 = element.value.search(rTok);
+	if(ret0>=0)
+	{
+		alert("You should not use blank characters in SMTP server name.");
+		element.select();
+		return false;
+	}
+	var items=element.value.split('.');
+	var i;
+	var isNum=true;
+	var isIP=true;
+	var regExp=/[\d]/;
+	for(i=0;i<items.length;i++) {
+		if(items[i]=='') {
+			alert("Please provide a valid SMTP server name.");
+			element.select();
+			return false;
+		}
+		if(isNum) {
+			isNum=regExp.test(items[i]);
+			if(!(isNum && items[i]>=0 && items[i]<256))
+				isIP=false;
+		}
+	}
+	if(isNum) {
+		if(isIP) {
+			if(items.length!=4) {
+				alert("Invalid server name. Please provide a valid SMTP server name.");
+				element.select();
+				return false;
+			}
+		} else {
+			alert("Invalid server name. Please provide a valid SMTP server name.");
+			element.select();
+			return false;
+		}
+	}
+	return true;
+}
+
+function isEmail(element)
+{
+	emailAddress=element.value;
+	if(element.value == "") 
+	{
+		alert("Please provide a valid e-mail address");
+		element.select();
+		return false;
+	}
+	ret0=-1;
+	rTok = / /g;  ret0 = element.value.search(rTok);
+	if(ret0>=0)
+	{
+		alert("You should not use blank characters in email address");
+		element.select();
+		return false;
+	}
+	if(element.value.indexOf ('@',0) == -1 || element.value.indexOf ('.',0) == -1)
+	{
+		alert("The email field requires \"@\" and a \".\"be used.\nPlease provide a valid e-mail address");
+		element.select();
+		return false;
+	}
+	return true
+}
+
+function checkvalue()
+{
+	if(document.configure.p_used.value=="0") {
+		document.configure.smtpsvr.disabled=true;
+		document.configure.smtp_mode.disabled=true;
+		document.configure.smtp_user.disabled=true;
+		document.configure.smtp_pwd.disabled=true;
+		document.configure.smtp_pwdcf.disabled=true;
+		document.configure.s_used.value=="0";
+		document.configure.s_used.disabled=true;
+		document.configure.s_smtpsvr.disabled=true;
+		document.configure.s_smtp_mode.disabled=true;
+		document.configure.s_smtp_user.disabled=true;
+		document.configure.s_smtp_pwd.disabled=true;
+		document.configure.s_smtp_pwdcf.disabled=true;
+		document.configure.sysmailaddr.disabled=true;
+	} else {
+		document.configure.smtpsvr.disabled=false;
+		document.configure.smtp_mode.disabled=false;
+		document.configure.s_used.disabled=false;
+		document.configure.sysmailaddr.disabled=false;
+		if(document.configure.smtp_mode.value == "SMTP")
+		{
+			document.configure.smtp_user.disabled=true;
+			document.configure.smtp_pwd.disabled=true;
+			document.configure.smtp_pwdcf.disabled=true;
+		}
+		else
+		{
+			document.configure.smtp_user.disabled=false;
+			document.configure.smtp_pwd.disabled=false;
+			document.configure.smtp_pwdcf.disabled=false;
+		}
+		if (document.configure.s_used.value=="1") {
+			document.configure.s_smtpsvr.disabled=false;
+			document.configure.s_smtp_mode.disabled=false;
+			if (document.configure.s_smtp_mode.value=="SMTP") {	
+				document.configure.s_smtp_user.disabled=true;
+				document.configure.s_smtp_pwd.disabled=true;
+				document.configure.s_smtp_pwdcf.disabled=true;
+			} else {
+				document.configure.s_smtp_user.disabled=false;
+				document.configure.s_smtp_pwd.disabled=false;
+				document.configure.s_smtp_pwdcf.disabled=false;
+			}
+		} else {
+			document.configure.s_smtpsvr.disabled=true;
+			document.configure.s_smtp_mode.disabled=true;
+			document.configure.s_smtp_user.disabled=true;
+			document.configure.s_smtp_pwd.disabled=true;
+			document.configure.s_smtp_pwdcf.disabled=true;
+		}
+	}
+}

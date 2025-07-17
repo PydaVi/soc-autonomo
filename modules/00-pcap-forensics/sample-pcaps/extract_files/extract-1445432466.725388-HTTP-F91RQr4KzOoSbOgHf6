@@ -1,0 +1,332 @@
+function checkSubmit(form)
+{
+	//if (document.configure.bnfsserver.value == "Disabled")
+	if (form.bnfsserver.options[0].selected == true)
+		return true;
+	else{
+		if (!checkServer(form.nfs_ip)) return false;
+		if (!checkTimeOut(form.nfs_timeo)) return false;
+		if (!checkTimeOut(form.nfs_retry_intvl)) return false;
+		if (form.bencrypted_pnfs.options[1].selected==true) {//Enabled
+			if(form.pnfs_user.value == ""){
+				alert("Please provide the primary NFS server user.");
+				form.pnfs_user.select();
+				return false;
+			}
+			if(form.pnfs_pwd.value == ""){
+				alert("Please provide the primary NFS server password.");
+				form.pnfs_pwd.select();
+				return false;
+			}
+			if(form.pnfs_pwdcf.value == ""){
+				alert("Please confirm the primary NFS server password.");
+				form.pnfs_pwdcf.select();
+				return false;
+			}
+			if(form.pnfs_pwdcf.value != form.pnfs_pwd.value){
+				alert("Primary NFS password mismatch. Please confirm again");
+				form.pnfs_pwd.select();
+				return false;
+			}
+		}
+		//if (form.s_used.value=="1") {
+		if (form.s_used.options[1].selected==true) {//Enabled
+			if (!checkServer(form.s_nfs_ip)) return false;
+			if (!checkTimeOut(form.s_nfs_timeo)) return false;
+			if (!checkTimeOut(form.s_nfs_retry_intvl)) return false;
+			if (form.bencrypted_snfs.options[1].selected==true) {//Enabled
+				if(form.snfs_user.value == ""){
+					alert("Please provide the secondary NFS server user.");
+					form.snfs_user.select();
+					return false;
+				}
+				if(form.snfs_pwd.value == ""){
+					alert("Please provide the secondary NFS server password.");
+					form.snfs_pwd.select();
+					return false;
+				}
+				if(form.snfs_pwdcf.value == ""){
+					alert("Please confirm the secondary NFS server password.");
+					form.snfs_pwdcf.select();
+					return false;
+				}
+				if(form.snfs_pwdcf.value != form.snfs_pwd.value){
+					alert("Secondary NFS password mismatch. Please confirm again");
+					form.snfs_pwd.select();
+					return false;
+				}
+			}
+		}
+	}
+	if(form.en_enable.selectedIndex==1){
+		if(form.en_title.value==""){
+			alert("Please provide the title of email.");
+			form.en_title.select();
+			return false;
+		}
+		if(!isEmail(form.en_mailto)) return false;
+	}
+	var rTok, ret=-1, i;
+	for (i=form.elements.length-9;i<=form.elements.length-4;i+=3){
+		var ipaddr = form.elements[i];
+		ipcheckres = checkIP(ipaddr);
+		if(ipcheckres == false) return false;
+	}
+	for (i=form.elements.length-8;i<=form.elements.length-3;i+=3){
+		if(form.elements[i].value == ""){
+			alert("Please provide the value in community string.");
+			form.elements[i].focus();
+			return false;
+		}
+		rTok = / /g;  
+		ret = form.elements[i].value.search(rTok);
+		if(ret>=0){
+			alert("You should not use blank characters in community string");
+			form.elements[i].select();
+			return false;
+		}
+		rTok = /\"/g;
+		ret = form.elements[i].value.search(rTok);
+		if(ret>=0) 
+		{
+			alert("You should not use \'\"\' in community string");
+			form.elements[i].select();
+			return false;
+		}
+	}
+	return true;
+}
+
+function checkServer(element)
+{
+	if(element.value == ""){
+		alert("Please provide the NFS server name.");
+		element.select();
+		return false;
+	}
+	/*if(element.value.indexOf('.',0)==-1){
+		alert("The NFS server name field requires \".\" used.\nPlease provide a valid NFS server name.");
+		element.select();
+		return false;
+	}*/
+	ret0=-1;
+	rTok = / /g;
+	ret0 = element.value.search(rTok);
+	if(ret0>=0){
+		alert("You should not use blank characters in NFS server name.");
+		element.select();
+		return false;
+	}
+	var items=element.value.split('.');
+	var i;
+	var isNum=true;
+	var isIP=true;
+	var regExp=/[\d]/;
+	for(i=0;i<items.length;i++) {
+		if(items[i]=='') {
+			alert("Please provide a valid NFS server name.");
+			element.select();
+			return false;
+		}
+		if(isNum) {
+			isNum=regExp.test(items[i]);
+			if(!(isNum && items[i]>=0 && items[i]<256))
+				isIP=false;
+		}
+	}
+	if(isNum){
+		if(isIP){
+			if(items.length!=4){
+				alert("Invalid server name. Please provide a valid NFS server name.");
+				element.select();
+				return false;
+			}
+		}else{
+			alert("Invalid server name. Please provide a valid NFS server name.");
+			element.select();
+			return false;
+		}
+	}
+        return true;
+}
+
+function checkTimeOut(comp)
+{
+	if(isNaN(comp.value)||(comp.value == "")){
+		alert("Please provide an integer value between 5 and 3600");
+		comp.select();
+		return false;
+	}
+	if(parseInt(comp.value)>3600||parseInt(comp.value)<5){
+		alert("Please provide an integer value between 5 and 3600");
+		comp.select();
+		return false;
+	}
+	return true;
+}
+
+function checkvalue()
+{
+	//if (document.configure.bnfsserver.value == "Disabled")
+	if (document.configure.bnfsserver.options[0].selected == true){
+		document.configure.nfs_ip.disabled=true;	
+		document.configure.nfs_path.disabled=true;
+		document.configure.nfs_timeo.disabled=true;
+		document.configure.nfs_retry_intvl.disabled=true;
+		document.configure.bencrypted_pnfs.disabled=true;
+		document.configure.pnfs_user.disabled=true;
+		document.configure.pnfs_pwd.disabled=true;
+		document.configure.pnfs_pwdcf.disabled=true;
+		document.configure.s_used.disabled=true;
+		document.configure.s_nfs_ip.disabled=true;
+		document.configure.s_nfs_path.disabled=true;
+		document.configure.s_nfs_timeo.disabled=true;
+		document.configure.s_nfs_retry_intvl.disabled=true;
+		document.configure.bencrypted_snfs.disabled=true;
+		document.configure.snfs_user.disabled=true;
+		document.configure.snfs_pwd.disabled=true;
+		document.configure.snfs_pwdcf.disabled=true;
+		document.configure.en_enable.disabled=true;
+		changeNFSEmail();
+		document.configure.enbNFSTrap.disabled=true;
+		changeNFSTrap();
+	}else{
+		document.configure.nfs_ip.disabled=false;	
+		document.configure.nfs_path.disabled=false;
+		document.configure.nfs_timeo.disabled=false;
+		document.configure.nfs_retry_intvl.disabled=false;
+		document.configure.s_used.disabled=false;
+		document.configure.bencrypted_pnfs.disabled=false;
+		if(document.configure.bencrypted_pnfs.options[0].selected==true){//Disabled
+			document.configure.pnfs_user.disabled=true;
+			document.configure.pnfs_pwd.disabled=true;
+			document.configure.pnfs_pwdcf.disabled=true;
+		}else{
+			document.configure.pnfs_user.disabled=false;
+			document.configure.pnfs_pwd.disabled=false;
+			document.configure.pnfs_pwdcf.disabled=false;
+		}
+		//if (document.configure.s_used.value=="1") {
+		if (document.configure.s_used.options[1].selected==true){//Enabled
+			document.configure.s_nfs_ip.disabled=false;
+			document.configure.s_nfs_path.disabled=false;
+			document.configure.s_nfs_timeo.disabled=false;
+			document.configure.s_nfs_retry_intvl.disabled=false;
+			document.configure.bencrypted_snfs.disabled=false;
+			if(document.configure.bencrypted_snfs.options[0].selected==true){//Disabled
+				document.configure.snfs_user.disabled=true;
+				document.configure.snfs_pwd.disabled=true;
+				document.configure.snfs_pwdcf.disabled=true;
+			}else{
+				document.configure.snfs_user.disabled=false;
+				document.configure.snfs_pwd.disabled=false;
+				document.configure.snfs_pwdcf.disabled=false;
+			}
+		}else{
+			document.configure.s_nfs_ip.disabled=true;
+			document.configure.s_nfs_path.disabled=true;
+			document.configure.s_nfs_timeo.disabled=true;
+			document.configure.s_nfs_retry_intvl.disabled=true;
+			document.configure.bencrypted_snfs.disabled=true;
+			document.configure.snfs_user.disabled=true;
+			document.configure.snfs_pwd.disabled=true;
+			document.configure.snfs_pwdcf.disabled=true;
+		}
+		document.configure.en_enable.disabled=false;
+		changeNFSEmail();
+		document.configure.enbNFSTrap.disabled=false;
+		changeNFSTrap();
+	}
+}
+
+function checkIP(comp)
+{
+	if(comp.value.search(/^\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}$/) != -1){
+		var myArray = comp.value.split(/\./);
+		if(myArray[0] > 255 || myArray[1] > 255 || myArray[2] > 255 || myArray[3] > 255){
+			alert("Invalid IP address");
+			comp.select();
+			return false;
+		}
+		if(myArray[0] == 255 && myArray[1] == 255 && myArray[2] == 255 && myArray[3] == 255){
+			alert("Invalid IP address");
+			comp.select();
+			return false;
+		}
+	}else{
+		alert("Invalid IP address");
+		comp.select();
+		return false;
+	}
+	return true;
+}
+
+function isEmail(element)
+{
+	emailAddress=element.value;
+	if(element.value == ""){
+		alert("Please provide a valid e-mail address");
+		element.focus();
+		return false;
+	}
+	ret0=-1;
+	rTok = / /g;  ret0 = element.value.search(rTok);
+	if(ret0>=0){
+		alert("You should not use blank characters in email address");
+		element.select();
+		return false;
+	}
+	if(element.value.indexOf ('@',0) == -1 || element.value.indexOf ('.',0) == -1){
+		alert("The email field requires \"@\" and a \".\"be used.\nPlease provide a valid e-mail address");
+		element.select();
+		return false;
+	}
+	return true
+}
+
+function changeNFSEmail()
+{
+	if(document.configure.bnfsserver.selectedIndex==0 || document.configure.en_enable.selectedIndex==0){
+		document.configure.en_title.disabled=true;
+		document.configure.en_mailto.disabled=true;
+	}else{
+		document.configure.en_title.disabled=false;
+		document.configure.en_mailto.disabled=false;
+	}
+}
+
+function changeNFSTrap()
+{
+	if(document.configure.bnfsserver.selectedIndex==0 || document.configure.enbNFSTrap.selectedIndex==0){
+		document.configure.snmp_use_global.disabled=true;
+		document.configure.trap_receiver0.disabled=true;
+		document.configure.trap_community0.disabled=true;
+		document.configure.trap_version0.disabled=true;
+		document.configure.trap_receiver1.disabled=true;
+		document.configure.trap_community1.disabled=true;
+		document.configure.trap_version1.disabled=true;
+		return;
+	}else{
+		document.configure.snmp_use_global.disabled=false;
+		changeSNMPGlobal();
+	}
+}
+
+function changeSNMPGlobal()
+{
+	if(document.configure.snmp_use_global.selectedIndex==0){
+		document.configure.trap_receiver0.disabled=false;
+		document.configure.trap_community0.disabled=false;
+		document.configure.trap_version0.disabled=false;
+		document.configure.trap_receiver1.disabled=false;
+		document.configure.trap_community1.disabled=false;
+		document.configure.trap_version1.disabled=false;
+	}else{
+		document.configure.trap_receiver0.disabled=true;
+		document.configure.trap_community0.disabled=true;
+		document.configure.trap_version0.disabled=true;
+		document.configure.trap_receiver1.disabled=true;
+		document.configure.trap_community1.disabled=true;
+		document.configure.trap_version1.disabled=true;
+	}
+}
