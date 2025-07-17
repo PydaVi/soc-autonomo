@@ -1,0 +1,5 @@
+# Logs e dados temporários
+*.log
+*.pcap
+*.processed
+/elasticsearch-data/
