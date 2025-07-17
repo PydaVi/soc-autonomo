@@ -13,3 +13,10 @@ docker-compose up -d
 ```
 filebeat setup
 ```
+## Lembrete pra salvar
+
+```
+git add .
+git commit
+git push origin main
+```
