@@ -1,0 +1,133 @@
+<html> 
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Cache-Control" content="no-cache">
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<script type="text/javascript">
+<!--
+	function touchLasttime()
+	{
+							theName = "lasttime";
+					expires = null;
+					now=new Date( );
+					document.cookie =theName + "=" + now.getTime() + "; path=/" + ((expires == null) ? " " : "; expires = " +expires.toGMTString());
+
+	}
+	function CheckCookie()
+	{
+		
+	}	
+	function AccountDiff(){
+		CheckCookie();
+		theData = "";
+		theName = "AccountName508=";
+		theCookie = document.cookie+";";
+		start = theCookie.indexOf(theName);
+		if(start != -1){
+			end=theCookie.indexOf(";",start);
+			theData = unescape(theCookie.substring(start+theName.length,end));
+		}
+		var i;
+		if(theData=="user"){
+			for(i=0;i<document.getElementsByTagName("input").length;i++){
+				document.getElementsByTagName("input")[i].disabled=true;
+				document.getElementsByTagName("input")[i].style.backgroundColor="#F5F5F5";
+			}
+		}				
+	}
+//-->
+</script>
+</head>
+
+<body bgcolor="#CCE6E6" text="#000000" topmargin="10" leftmargin="12" onLoad="AccountDiff()">
+<form name="system_form" method="post" onClick="touchLasttime()" onkeypress="touchLasttime()" action="/goform/UDPmessageSetting" target="mid" >
+<div align="left">
+	<font size="5" face="Arial, Helvetica, sans-serif, Marlett" color="#007C60">
+	<b>Syslog Settings</b></font>
+	<br><br><br>
+</div>
+<div align="center">        
+    <table width="100%" border="0" cellspacing="10" cellpadding="0" align="center">
+  <tr>
+      <table border="0" width="60%" align="center">
+        <tr> 
+          <td width="65%"> 
+            <div align="left"><font size="2" face="Arial, Helvetica, sans-serif, Marlett">
+            Syslog Server 1 </font></div>
+          </td>
+          <td width="35%">
+            <div align="left"><font size="2" face="Arial, Helvetica, sans-serif, Marlett"> 
+	        <input type="text" name="udpmsgIPDestination1" size="30" maxlength="30" value="">
+</font></div>
+	      </td>
+        </tr>
+        <tr> 
+        <tr> 
+        <tr> 
+          <td width="65%"> 
+            <div align="left"><font size="2" face="Arial, Helvetica, sans-serif, Marlett">
+            Port Destination </font></div>
+          </td>
+          <td width="35%">
+            <div align="left"><font size="2" face="Arial, Helvetica, sans-serif, Marlett"> 
+	        <input type="text" name="udpmsgPort1" size="4" maxlength="5" value="514">&nbsp(1~65535)</font></div>
+	      </td>
+        </tr> 
+          <td width="65%"> 
+            <div align="left"><font size="2" face="Arial, Helvetica, sans-serif, Marlett">
+            Syslog Server 2 </font></div>
+          </td>
+          <td width="35%">
+            <div align="left"><font size="2" face="Arial, Helvetica, sans-serif, Marlett"> 
+	        <input type="text" name="udpmsgIPDestination2" size="30" maxlength="30" value="">
+</font></div>
+	      </td>
+        </tr>
+        <tr> 
+        <tr> 
+          <td width="65%"> 
+            <div align="left"><font size="2" face="Arial, Helvetica, sans-serif, Marlett">
+            Port Destination </font></div>
+          </td>
+          <td width="35%">
+            <div align="left"><font size="2" face="Arial, Helvetica, sans-serif, Marlett"> 
+	        <input type="text" name="udpmsgPort2" size="4" maxlength="5" value="514">&nbsp(1~65535)</font></div>
+	      </td>
+        </tr> 
+        <tr> 
+          <td width="65%"> 
+            <div align="left"><font size="2" face="Arial, Helvetica, sans-serif, Marlett">
+            Syslog Server 3 </font></div>
+          </td>
+          <td width="35%">
+            <div align="left"><font size="2" face="Arial, Helvetica, sans-serif, Marlett"> 
+	        <input type="text" name="udpmsgIPDestination3" size="30" maxlength="30" value="">
+</font></div>
+	      </td>
+        </tr>
+        <tr> 
+          <td width="65%"> 
+            <div align="left"><font size="2" face="Arial, Helvetica, sans-serif, Marlett">
+            Port Destination </font></div>
+          </td>
+          <td width="35%">
+            <div align="left"><font size="2" face="Arial, Helvetica, sans-serif, Marlett"> 
+	        <input type="text" name="udpmsgPort3" size="4" maxlength="5" value="514">&nbsp(1~65535)</font></div>
+	      </td>
+        </tr>                      
+    </td>
+  </tr>
+</table>
+
+		<tr> 
+            <td width="20%"><div align="left"><font size="2" face="Arial, Helvetica, sans-serif, Marlett">
+            	</font></div></td>
+            <td width="60%" colspan="2"><div align="center"><font size="2" face="Arial, Helvetica, sans-serif, Marlett">
+              	<br><input type="image" name="SystemSubmit" src="activate_button.gif"></font></div></td>
+            <td width="20%"><div align="left"><font size="2" face="Arial, Helvetica, sans-serif, Marlett">
+            	</font></div></td>
+        </tr> 
+</div>   		
+</form>
+</body>
+</html>

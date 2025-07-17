@@ -1,0 +1,36 @@
+var isNav, isIE
+var output = ''
+var appVersion = parseInt(navigator.appVersion);
+if ( appVersion >= 4) {
+	isNav = (navigator.appName == "Netscape")
+	isIE = (navigator.appName.indexOf("Microsoft") != -1)
+	isKon = (navigator.appName.indexOf("Konqueror") != -1)
+}
+if (isIE) {
+	if (navigator.appVersion.indexOf("Macintosh") != -1) {
+		output = " <LINK REL='stylesheet' TYPE='text/css' HREF='css/digistyle.css' TITLE='Default'>"
+	} else if (navigator.appVersion.indexOf("Windows") != -1) {
+		output = " <LINK REL='stylesheet' TYPE='text/css' HREF='css/digistyle.css' TITLE='Default'>"
+	} else {
+		output = " <LINK REL='stylesheet' TYPE='text/css' HREF='css/digistyle.css' TITLE='Default'>"
+	}
+} else if (isNav) {
+	if (appVersion >= 5) {
+		if (navigator.appVersion.indexOf("Macintosh") != -1) {
+			output = " <LINK REL='stylesheet' TYPE='text/css' HREF='css/digistyle.css' TITLE='Default'>"
+		} else if (navigator.appVersion.indexOf("Windows") != -1) {
+			output = " <LINK REL='stylesheet' TYPE='text/css' HREF='css/digistyle.css' TITLE='Default'>"
+		} else if (navigator.appVersion.indexOf("X11") != -1) {
+			output = " <LINK REL='stylesheet' TYPE='text/css' HREF='css/digistyle.css' TITLE='Default'>"
+		} else {
+			output = " <LINK REL='stylesheet' TYPE='text/css' HREF='css/digistyle.css' TITLE='Default'>"
+		}
+	} else {
+		output = " <LINK REL='stylesheet' TYPE='text/css' HREF='css/digistyle_ns4.css' TITLE='Default'>"
+	}
+} else if (isKon) {
+		output = " <LINK REL='stylesheet' TYPE='text/css' HREF='css/digistyle_ns4.css' TITLE='Default'>"
+}
+
+document.write(output)
+

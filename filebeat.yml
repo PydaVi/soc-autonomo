@@ -2,13 +2,13 @@ filebeat.modules:
   - module: zeek
     connection:
       enabled: true
-      var.paths: ["/sample-pcaps/conn.log"]
+      var.paths: ["/logs/conn.log"]
     dns:
       enabled: true
-      var.paths: ["/sample-pcaps/dns.log"]
+      var.paths: ["/logs/dns.log"]
     http:
       enabled: true
-      var.paths: ["/sample-pcaps/http.log"]
+      var.paths: ["/logs/http.log"]
 
 output.elasticsearch:
   hosts: ["http://elasticsearch:9200"]
@@ -28,4 +28,3 @@ processors:
 filebeat.config.modules:
   path: ${path.config}/modules.d/*.yml
   reload.enabled: false
-

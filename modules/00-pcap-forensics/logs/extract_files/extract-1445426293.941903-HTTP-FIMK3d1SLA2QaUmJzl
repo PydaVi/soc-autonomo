@@ -1,0 +1,154 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Cache-Control" content="no-cache">
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<script type="text/javascript">
+<!--
+	
+	function SelectType(form){			
+		var i;
+		i=form.select_mac_list.options[form.select_mac_list.selectedIndex].value;
+		location.href="mac_address_table_setting.asp?mac_type="+i+"&list_page=1";
+	}
+	
+	function SelectPage(form){
+		var i;
+		var m;
+		i=form.select_mac_list.options[form.select_mac_list.selectedIndex].value;		
+		m=form.select_page_list.options[form.select_page_list.selectedIndex].value;
+		form.select_page_list.options[form.select_page_list.selectedIndex].selected=true;
+		location.href="mac_address_table_setting.asp?mac_type="+i+"&list_page="+m;
+	}
+	function touchLasttime()
+	{
+							theName = "lasttime";
+					expires = null;
+					now=new Date( );
+					document.cookie =theName + "=" + now.getTime() + "; path=/" + ((expires == null) ? " " : "; expires = " +expires.toGMTString());
+
+	}
+	function CheckCookie()
+	{
+		
+	}	
+	function ShowPageSelect(){
+		var j,k,l;
+		CheckCookie();
+		l=eval(document.mac_address_table_setting_form.show_page.value);
+		j=eval(document.mac_address_table_setting_form.total_page.value);
+		document.mac_address_table_setting_form.select_page_list.options.length = j;
+		for( k=0 ; k<j ; k++ ){
+			str1=""+(k+1);
+			str2=""+j;			
+			document.mac_address_table_setting_form.select_page_list.options[k].text = "Page "+str1+"/"+str2;
+			document.mac_address_table_setting_form.select_page_list.options[k].value = (k+1);
+			document.mac_address_table_setting_form.select_page_list.options[k].selected=false;
+			if( l==(k+1) ){
+				document.mac_address_table_setting_form.select_page_list.selectedIndex = k;
+				document.mac_address_table_setting_form.select_page_list.options[k].selected=true;
+			}
+		}	
+	}
+					
+-->
+</script>
+<style type="text/css">
+<!--
+tr.style1{background-color: "#007C60";}
+tr.style2{background-color: "#FFFFFF";}
+//-->
+</style>
+</head>
+
+<body bgcolor="#CCE6E6" text="#000000" topmargin="10" leftmargin="12" onLoad="ShowPageSelect()">
+<form method="post" name="mac_address_table_setting_form" onClick="touchLasttime()" onkeypress="touchLasttime()" target="mid">
+<div align="left">
+	<font size="5" face="Arial, Helvetica, sans-serif, Marlett" color="#007C60">
+	<b>All MAC Address List</b></font><br><br>
+</div>
+<div align="left">
+<table width="100%">
+	<tr>
+    	<td width="4%"><div align="left"><font size="2" face="Arial, Helvetica, sans-serif, Marlett">
+    		</font></div></td>
+    	<td width="26%"><div align="left"><font size="2" face="Arial, Helvetica, sans-serif, Marlett"> 
+	    	<select name="select_mac_list" size="1" onChange="SelectType(this.form)" >
+				<option value="0" selected >All</option>
+<option value="1" >All Learned</option>
+<option value="2" >All Static</option>
+<option value="3" >All Multicast</option>
+<option value="5">Port 1</option>
+<option value="6">Port 2</option>
+<option value="7">Port 3</option>
+<option value="8">Port 4</option>
+<option value="9">Port 5</option>
+<option value="10">Port 6</option>
+<option value="11">Port 7</option>
+<option value="12">Port 8</option>
+<option value="13">Port 9</option>
+<option value="14">Port 10</option>
+<option value="15">Port 11</option>
+<option value="16">Port 12</option>
+<option value="17">Port 13</option>
+<option value="18">Port 14</option>
+<option value="19">Port 15</option>
+<option value="20">Port 16</option>
+
+      	    </select></font></div></td>
+    	<td width="70%"><div align="left"><font size="2" face="Arial, Helvetica, sans-serif, Marlett"> 
+	    	<select name="select_page_list" size="1" onChange="SelectPage(this.form)" >
+      	    </select></font></div></td>      	    
+	</tr>
+	<tr>
+		<td width="4%"><div align="left"><font size="2" face="Arial, Helvetica, sans-serif, Marlett">
+    		</font></div></td>
+    	<td width="96%" colspan="2"><div align="left"><font size="2" face="Arial, Helvetica, sans-serif, Marlett">    	
+
+	</tr>
+	<tr>
+		<td width="4%"><div align="left"><font size="2" face="Arial, Helvetica, sans-serif, Marlett">
+    		</font></div></td>
+    	<td width="96%" colspan="2"><div align="left"><font size="2" face="Arial, Helvetica, sans-serif, Marlett">    	
+			<table width="640" border="0" >
+<tr bgcolor="#007C60">
+<td width="6%"><div align="left"><font size="2" face="Arial, Helvetica, sans-serif, Marlett" color="#FFFFFF" >
+Index</font></div></td>
+<td width="26%"><div align="left"><font size="2" face="Arial, Helvetica, sans-serif, Marlett" color="#FFFFFF" >
+MAC</font></div></td>
+<td width="12%"><div align="left"><font size="2" face="Arial, Helvetica, sans-serif, Marlett" color="#FFFFFF" >
+Type</font></div></td>
+<td width="56%"><div align="left"><font size="2" face="Arial, Helvetica, sans-serif, Marlett" color="#FFFFFF" >
+Port</font></div></td>
+</tr>
+<tr bgcolor="#FFFFFF" onMouseOver="this.style.background='#00ff66'" onMouseOut="this.style.background='#ffffff'">
+<td width="6%"><div align="left"><font size="2" face="Arial, Helvetica, sans-serif, Marlett">1</font></div></td><td width="26%">00-00-bc-61-18-62</td><td width="12%">ucast(l)</td><td width="56%">13</td></tr>
+<tr bgcolor="#FFFFFF" onMouseOver="this.style.background='#00ff66'" onMouseOut="this.style.background='#ffffff'">
+<td width="6%"><div align="left"><font size="2" face="Arial, Helvetica, sans-serif, Marlett">2</font></div></td><td width="26%">00-07-7c-1a-61-83</td><td width="12%">ucast(l)</td><td width="56%">8</td></tr>
+<tr bgcolor="#FFFFFF" onMouseOver="this.style.background='#00ff66'" onMouseOut="this.style.background='#ffffff'">
+<td width="6%"><div align="left"><font size="2" face="Arial, Helvetica, sans-serif, Marlett">3</font></div></td><td width="26%">00-0a-dc-5b-27-a0</td><td width="12%">ucast(l)</td><td width="56%">13</td></tr>
+<tr bgcolor="#FFFFFF" onMouseOver="this.style.background='#00ff66'" onMouseOut="this.style.background='#ffffff'">
+<td width="6%"><div align="left"><font size="2" face="Arial, Helvetica, sans-serif, Marlett">4</font></div></td><td width="26%">00-0a-dc-63-9d-00</td><td width="12%">ucast(l)</td><td width="56%">13</td></tr>
+<tr bgcolor="#FFFFFF" onMouseOver="this.style.background='#00ff66'" onMouseOut="this.style.background='#ffffff'">
+<td width="6%"><div align="left"><font size="2" face="Arial, Helvetica, sans-serif, Marlett">5</font></div></td><td width="26%">00-0a-dc-64-85-c3</td><td width="12%">ucast(l)</td><td width="56%">13</td></tr>
+<tr bgcolor="#FFFFFF" onMouseOver="this.style.background='#00ff66'" onMouseOut="this.style.background='#ffffff'">
+<td width="6%"><div align="left"><font size="2" face="Arial, Helvetica, sans-serif, Marlett">6</font></div></td><td width="26%">00-0e-38-95-1d-85</td><td width="12%">ucast(l)</td><td width="56%">8</td></tr>
+<tr bgcolor="#FFFFFF" onMouseOver="this.style.background='#00ff66'" onMouseOut="this.style.background='#ffffff'">
+<td width="6%"><div align="left"><font size="2" face="Arial, Helvetica, sans-serif, Marlett">7</font></div></td><td width="26%">00-0e-38-95-1d-87</td><td width="12%">ucast(l)</td><td width="56%">12</td></tr>
+<tr bgcolor="#FFFFFF" onMouseOver="this.style.background='#00ff66'" onMouseOut="this.style.background='#ffffff'">
+<td width="6%"><div align="left"><font size="2" face="Arial, Helvetica, sans-serif, Marlett">8</font></div></td><td width="26%">00-11-22-7b-c5-50</td><td width="12%">ucast(l)</td><td width="56%">9</td></tr>
+<tr bgcolor="#FFFFFF" onMouseOver="this.style.background='#00ff66'" onMouseOut="this.style.background='#ffffff'">
+<td width="6%"><div align="left"><font size="2" face="Arial, Helvetica, sans-serif, Marlett">9</font></div></td><td width="26%">00-1c-06-01-d4-23</td><td width="12%">ucast(l)</td><td width="56%">13</td></tr>
+<tr bgcolor="#FFFFFF" onMouseOver="this.style.background='#00ff66'" onMouseOut="this.style.background='#ffffff'">
+<td width="6%"><div align="left"><font size="2" face="Arial, Helvetica, sans-serif, Marlett">10</font></div></td><td width="26%">00-40-8c-7f-0b-bc</td><td width="12%">ucast(l)</td><td width="56%">13</td></tr>
+</table></font></div></td>
+<input type="hidden" id="total_page" name="total_page" value="3">
+<input type="hidden" id="show_page" name="show_page" value="1">
+
+			</font></div></td>
+	</tr>
+</table>
+</div>
+</form>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Cache-Control" content="no-cache">
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<script type="text/javascript">
+<!--
+	
+	function touchLasttime()
+	{
+							theName = "lasttime";
+					expires = null;
+					now=new Date( );
+					document.cookie =theName + "=" + now.getTime() + "; path=/" + ((expires == null) ? " " : "; expires = " +expires.toGMTString());
+
+	}
+	
+	function CheckCookie()
+	{
+		
+	}	
+					
+-->
+</script>
+<style type="text/css">
+<!--
+tr.style1{background-color: "#007C60";}
+tr.style2{background-color: "#FFFFFF";}
+//-->
+</style>
+</head>
+
+<body bgcolor="#CCE6E6" text="#000000" topmargin="10" leftmargin="12" onLoad="CheckCookie()" >
+<form method="post" name="mac_address_table_setting_form" onClick="touchLasttime()" onkeypress="touchLasttime()" target="mid">
+<div align="left">
+	<font size="5" face="Arial, Helvetica, sans-serif, Marlett" color="#007C60">
+	<b>Neighbor Cache</b></font><br><br>
+</div>
+<div align="left">
+<table width="100%">
+	<tr>
+    	<td width="4%"><div align="left"><font size="2" face="Arial, Helvetica, sans-serif, Marlett">
+    		</font></div></td>
+    	<td width="96%"><div align="left"><font size="2" face="Arial, Helvetica, sans-serif, Marlett"> 
+			<table width="640" border="0" >
+<tr bgcolor="#007C60">
+<td width="60%"><div align="left"><font size="2" face="Arial, Helvetica, sans-serif, Marlett" color="#FFFFFF" >
+IPv6 Address</font></div></td>
+<td width="30%"><div align="left"><font size="2" face="Arial, Helvetica, sans-serif, Marlett" color="#FFFFFF" >
+Link Layer (MAC) Address</font></div></td>
+<td width="10%"><div align="left"><font size="2" face="Arial, Helvetica, sans-serif, Marlett" color="#FFFFFF" >
+State</font></div></td>
+<tr bgcolor="#FFFFFF" onMouseOver="this.style.background='#00ff66'" onMouseOut="this.style.background='#ffffff'">
+<td width="60%"><div align="left"><font size="2" face="Arial, Helvetica, sans-serif, Marlett">fe80::290:e8ff:fe27:8c37</font></div></td><td width="30%"><div align="left"><font size="2" face="Arial, Helvetica, sans-serif, Marlett">00-90-e8-27-8c-37</font></div></td><td width="10%">Reachable</td>
+			</font></div></td>    
+	</tr>
+</table>
+</div>
+</form>
+</body>
+</html>
+

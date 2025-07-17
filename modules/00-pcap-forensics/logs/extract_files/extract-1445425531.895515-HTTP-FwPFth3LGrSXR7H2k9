@@ -1,0 +1,57 @@
+<HTML><HEAD>
+<script language="JavaScript"><!--
+
+function isValidNumber(string) {
+	return /^((\+|-)\d)?\d*$/.test(string);
+}
+function ValidateNumber(el){
+	if (isValidNumber(el.value) == false){
+        alert("Please enter a valid number.");
+        el.focus();
+        return false;
+	} else return true;}
+
+function isReady(form) 
+{
+if (ValidateNumber(form.d0) == false) return false;
+if (ValidateNumber(form.t0) == false) return false;
+if (ValidateNumber(form.r0) == false) return false;
+if (ValidateNumber(form.d1) == false) return false;
+if (ValidateNumber(form.t1) == false) return false;
+if (ValidateNumber(form.r1) == false) return false;
+if (ValidateNumber(form.d2) == false) return false;
+if (ValidateNumber(form.t2) == false) return false;
+if (ValidateNumber(form.r2) == false) return false;
+if (ValidateNumber(form.d3) == false) return false;
+if (ValidateNumber(form.t3) == false) return false;
+if (ValidateNumber(form.r3) == false) return false;
+if (ValidateNumber(form.d4) == false) return false;
+if (ValidateNumber(form.t4) == false) return false;
+if (ValidateNumber(form.r4) == false) return false;
+if (ValidateNumber(form.d5) == false) return false;
+if (ValidateNumber(form.t5) == false) return false;
+if (ValidateNumber(form.r5) == false) return false;
+if (ValidateNumber(form.d6) == false) return false;
+if (ValidateNumber(form.t6) == false) return false;
+if (ValidateNumber(form.r6) == false) return false;
+if (ValidateNumber(form.d7) == false) return false;
+if (ValidateNumber(form.t7) == false) return false;
+if (ValidateNumber(form.r7) == false) return false;
+return true;
+}
+//--></script>
+
+<TITLE>Set up Timeouts / Retries</TITLE></HEAD>
+<BODY>
+<FORM action="settimeouts.html" method="get" onSubmit="return isReady(this)"><P><h1 align=center>Set up Slave Timeout / Retries</h1><HR>
+<BR><CENTER>Default Timeout (ms): <INPUT type=text name="dt" value="1000" maxlength=6 size=6 ></CENTER><BR><CENTER>Default Retries: <INPUT type=text name="dr" value="2" maxlength=6 size=6 ></CENTER><BR><CENTER>Inter-packet Tx Delay (ms): <INPUT type=text name="dd" value="20" maxlength=6 size=6 ></CENTER><BR><CENTER><TABLE bgColor=#ffffff BORDER=2 width=40%><COLGROUP align="center"><COL width="33%"><COL width="33%"><COL width="33%"><TBODY><tr><th COLSPAN="3">Exceptions</th></tr>
+<TR><TH>Device</TH><TH>Timeout (ms)</TH><TH>Retries</TH></TR>
+<TR><TD><INPUT type="text" name="d0" value="0" maxlength=3 size=3 ><TD><INPUT type="text" name="t0" value="0" maxlength=5 size=5 ><TD><INPUT type="text" name="r0" value="0" maxlength=3 size=3 >
+<TR><TD><INPUT type="text" name="d1" value="0" maxlength=3 size=3 ><TD><INPUT type="text" name="t1" value="0" maxlength=5 size=5 ><TD><INPUT type="text" name="r1" value="0" maxlength=3 size=3 >
+<TR><TD><INPUT type="text" name="d2" value="0" maxlength=3 size=3 ><TD><INPUT type="text" name="t2" value="0" maxlength=5 size=5 ><TD><INPUT type="text" name="r2" value="0" maxlength=3 size=3 >
+<TR><TD><INPUT type="text" name="d3" value="0" maxlength=3 size=3 ><TD><INPUT type="text" name="t3" value="0" maxlength=5 size=5 ><TD><INPUT type="text" name="r3" value="0" maxlength=3 size=3 >
+<TR><TD><INPUT type="text" name="d4" value="0" maxlength=3 size=3 ><TD><INPUT type="text" name="t4" value="0" maxlength=5 size=5 ><TD><INPUT type="text" name="r4" value="0" maxlength=3 size=3 >
+<TR><TD><INPUT type="text" name="d5" value="0" maxlength=3 size=3 ><TD><INPUT type="text" name="t5" value="0" maxlength=5 size=5 ><TD><INPUT type="text" name="r5" value="0" maxlength=3 size=3 >
+<TR><TD><INPUT type="text" name="d6" value="0" maxlength=3 size=3 ><TD><INPUT type="text" name="t6" value="0" maxlength=5 size=5 ><TD><INPUT type="text" name="r6" value="0" maxlength=3 size=3 >
+<TR><TD><INPUT type="text" name="d7" value="0" maxlength=3 size=3 ><TD><INPUT type="text" name="t7" value="0" maxlength=5 size=5 ><TD><INPUT type="text" name="r7" value="0" maxlength=3 size=3 >
+</TBODY></TABLE></CENTER><BR><CENTER><INPUT type="button" value="Back" onclick="history.go(-1)"> <INPUT type="submit" value="Send"> <INPUT type="reset"> </CENTER> </P></FORM></BODY></HTML>

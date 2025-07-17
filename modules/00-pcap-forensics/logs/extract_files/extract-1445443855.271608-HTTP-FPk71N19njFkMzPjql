@@ -1,0 +1,26 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title></title>
+</head>
+<body bgcolor="#007C60" topmargin="0" color="#FFFFFF" leftmargin="10">
+<div align="left">
+	<table width="100%" border="0" cellspacing="3" cellpadding="0" align="center" >
+	<tr>
+		<APPLET code="ShowStatus.class" width=3840 height=100>
+			<PARAM name="ModelNameLabel" value="Model :"><PARAM name="SwitchNameLabel" value="Name :"><PARAM name="SwtichLocLabel" value="Location :"><PARAM name="ModelName" value="EDS-508A">
+			<PARAM name="SwtichIpLabel" value="IP :"><PARAM name="IPAddress" value="192.168.88.60">
+			<PARAM name="SwtichMacLabel" value="MAC Address :"><PARAM name="MACAddress" value="00-90-E8-26-40-23">
+			<PARAM name="SwitchSnLabel" value="Serial No :"><PARAM name="SerialNO" value="04759">
+			<PARAM name="SwitchFwLabel" value="Firmware version :"><PARAM name="FirmVersion" value="V3.0 build 11071816">
+			<PARAM name="MasterLEDName" value="MSTR/HEAD"> 
+<PARAM name="MasterLED_offset" value="25"> 
+<PARAM name="CouplerLEDName" value="CPLR/TAIL"> 
+<PARAM name="CouplerLED_offset" value="25"> 
+
+		</APPLET>
+	</tr>
+	</table>
+</div>
+</body>
+</html>

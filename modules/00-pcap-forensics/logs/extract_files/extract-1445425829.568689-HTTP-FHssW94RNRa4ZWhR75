@@ -1,0 +1,73 @@
+function checkSubmit(form)
+{
+	if (document.configure.bsyslogserver.value == "Disabled")
+		return true;
+	else{
+		if(checkServer(form.syslog_ip)==false)
+			return false;
+		if(form.syslog_2ndip.value!="")
+			return checkServer(form.syslog_2ndip);
+	}
+}
+function checkServer(element)
+{
+	if(element.value == ""){
+		alert("Please provide the SYSLOG server name.");
+		element.select();
+		return false;
+	}
+	ret0=-1;
+	rTok = / /g;
+	ret0 = element.value.search(rTok);
+	if(ret0>=0){
+		alert("You should not use blank characters in SYSLOG server name.");
+		element.select();
+		return false;
+	}
+	var items=element.value.split('.');
+	var i;
+	var isNum=true;
+	var isIP=true;
+	var regExp=/[\d]/;
+	for(i=0;i<items.length;i++) {
+		if(items[i]=='') {
+			alert("Please provide a valid SYSLOG server name.");
+			element.select();
+			return false;
+		}
+		if(isNum) {
+			isNum=regExp.test(items[i]);
+			if(!(isNum && items[i]>=0 && items[i]<256))
+				isIP=false;
+		}
+	}
+	if(isNum){
+		if(isIP){
+			if(items.length!=4){
+				alert("Invalid server name. Please provide a valid SYSLOG server name.");
+				element.select();
+				return false;
+			}
+		}else{
+			alert("Invalid server name. Please provide a valid SYSLOG server name.");
+			element.select();
+			return false;
+		}
+	}
+        return true;
+}
+function checkvalue()
+{
+	if (document.configure.bsyslogserver.value == "Disabled")
+	{
+		document.configure.syslog_ip.disabled = true;	
+		document.configure.syslog_2ndip.disabled = true;	
+		document.configure.syslog_facility.disabled = true;	
+	}
+	else
+	{
+		document.configure.syslog_ip.disabled = false;	
+		document.configure.syslog_2ndip.disabled = false;	
+		document.configure.syslog_facility.disabled = false;	
+	}
+}

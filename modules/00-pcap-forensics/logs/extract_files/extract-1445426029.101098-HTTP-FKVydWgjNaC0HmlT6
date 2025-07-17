@@ -1,0 +1,50 @@
+/* Stylesheet V1.02 */
+/* Created: 03/2000 Dirk Kleefisch */
+/* Changed: 07/2002 Sven Grinder */
+
+body { background-color: #FBFBE9 } 
+
+/* text */
+p { font-family: Arial, Helvetica, sans-serif; text-decoration: none ; color: #000000; font-size: 10pt; font-weight: normal; padding-left: 10pt; font-style: normal}
+
+.plink { }
+
+/* table */
+th { font-family: Arial, Helvetica, sans-serif; text-decoration: none ; color: #000000; font-size: 14pt; font-weight: bold; font-style: normal; text-align: left; text-indent: 5pt}
+
+
+/* links */
+a:link { text-decoration: underline; font-size: 10pt; font-weight: bold; color:#000000; font-family: Arial, Helvetica, sans-serif}
+a:visited { text-decoration: underline; font-size: 10pt; font-weight: bold; color:#000000}
+
+.contentlink {  padding-left: 10px}
+
+/* menu */
+.menuopen { font-family: Arial, Helvetica, sans-serif; font-size: 10pt; font-weight: bold; color:#000000}
+.menu { font-family: Arial, Helvetica, sans-serif; font-size: 10pt; font-weight: bold; color:#000000}
+.menu2 {  font-family: Arial, Helvetica, sans-serif; font-size: 10pt; font-style: normal; font-weight: bold; color:#000000}
+
+
+
+/* logo */
+.logo {  padding-top: 1px; padding-right: 1px; padding-bottom: 1px; padding-left: 1px}
+.devicetyp { font-family: Arial, Helvetica, sans-serif; font-size: 12pt; font-style: normal; font-weight: bold; color: #000000 }
+.devicesymbol {  padding-top: 1px; padding-right: 1px; padding-bottom: 1px; padding-left: 1px}
+
+
+
+/* content */
+.tablecolor {  background-color: #CCCCCC}
+.tablehead2 {  font-family: Arial, Helvetica, sans-serif; font-size: 10pt; font-style: normal; font-weight: bold; padding-left: 10pt; color:#000000}
+.message {  font-family: Arial, Helvetica, sans-serif; font-size: 12pt; font-style: normal; font-weight: bold; color:#000000}
+.indented {  padding-left: 30px}
+.radiobutton {  font-family: Arial, Helvetica, sans-serif; font-size: 10pt; font-style: normal; font-weight: normal; color:#000000}
+
+
+
+/* bmk */
+.bmk {  font-family: Arial, Helvetica, sans-serif; font-size: 12pt; font-style: normal; font-weight: bold; background-position: center; text-align: center; color:#000000}
+.bmk_zeit {  font-family: Arial, Helvetica, sans-serif; font-size: 10pt; font-style: normal; font-weight: normal; text-align: right; color: #000000}
+.information {  font-family: Arial, Helvetica, sans-serif; font-size: 10pt; font-style: italic; font-weight: normal; padding-left: 10px; color:#000000}
+.pwddistance {  font-family: Arial, Helvetica, sans-serif; font-size: 10pt; font-style: normal; font-weight: normal; border-color: black #6666FF; border-right-width: auto; border-left-width: auto; color:#000000}
+

@@ -1,0 +1,118 @@
+<html>
+<head>
+<title></title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<script language="JavaScript" src="md5.js"></script>
+<script type="text/javascript">
+<!--
+
+	NumArray = new Array();
+	function StrToHex(str)
+	{
+		var i = 0;
+		var ret = 0;
+		table = new Array("0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "a", "b", "c", "d", "e", "f");
+		for (i = 0; i < 16; ++i) {
+			if (str.charAt(0) == table[i])
+				ret = i*16;
+		}
+		for (i = 0; i < 16; ++i) {
+			if (str.charAt(1) == table[i])
+				ret += i;
+		}
+		return ret;
+	}
+
+	function DecToHexStr(d)
+	{
+		table = new Array("0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "a", "b", "c", "d", "e", "f");
+		var ret = "";
+		var i = d/16;
+		for (var j = 0; j <= i; ++j)
+			var c = table[j];
+		ret += c;
+
+		i = d%16;
+		for (var j = 0; j < 16; ++j) {
+			if (j == i) {
+				var c = table[j];
+				break;
+			}
+		}
+		ret += c;
+		return ret;
+	}
+
+	function SetCookie(){
+		var ascii="01234567890123456789012345678901" +
+			  	  " !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ"+
+			  	  "[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~";
+		
+		theName = "AccountName508";
+		if(document.account_password_form.account.value==0){
+			theValue = "admin";
+		}else{
+			theValue = "user";
+		}
+		expires = null;
+		document.cookie =theName + "=" + escape(theValue) + "; path=/" + ((expires == null) ? " " : "; expires = " +expires.toGMTString()); 
+						
+		theName = "Password508";
+		var chall = "123";
+		expires = null;		
+		var op=document.account_password_form.password.value;
+		theValue = MD5(op+chall);		
+		document.cookie =theName + "=" + escape(theValue) + "; path=/" + ((expires == null) ? " " : "; expires = " +expires.toGMTString()); 		
+		document.account_password_form.password.value="";	
+
+		theName = "lasttime";
+		expires = null;		
+		now=new Date( );
+		document.cookie =theName + "=" + now.getTime() + "; path=/" + ((expires == null) ? " " : "; expires = " +expires.toGMTString()); 
+
+	}
+
+-->
+</script>
+</head>
+
+<body bgcolor=#CCE6E6 text="#000000" topmargin="100">
+<form method="post" name="account_password_form" action="/home.asp" target="_top"  onSubmit="SetCookie()">  
+<div align="center"> 
+<script type="text/javascript">
+<!--
+if (navigator.cookieEnabled){
+} else {
+	document.write("Cookie Close¡I");
+	window.close();
+}
+//-->
+</script>
+<table width="30%">
+  		<tr> 
+            <td width="40%"><div align="left"><font size="3" face="Arial, Helvetica, sans-serif, Marlett">
+            	Account :</font></div></td>
+    		<td width="60%"><div align="left"><font size="3" face="Arial, Helvetica, sans-serif, Marlett">
+      			<select name="account">
+      				<option value="0">admin</option>
+      				<option value="1">user</option>
+      			</select>
+      			</font></div></td>
+  		</tr>
+  		<tr>
+  			<td width="40%"><div align="left"><font size="3" face="Arial, Helvetica, sans-serif, Marlett">
+            	Password :</font></div></td>
+  			<td width="60%"><div align="left"><font size="3" face="Arial, Helvetica, sans-serif, Marlett"> 
+  				<input type="password" name="password" size="16" maxlength="16"></font></div></td>
+  		</tr>
+  		<tr>
+  			<td width="100%" colspan="2"><div align="center"><font size="3" face="Arial, Helvetica, sans-serif, Marlett"> 
+  				<br><input type="image" name="Loginin" src="loginin.gif" ></font></div></td>
+  		</tr>  		     
+</table>
+</div>
+</form>  
+</body>
+</html>
+

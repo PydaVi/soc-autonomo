@@ -3,3 +3,4 @@
 *.pcap
 *.processed
 /elasticsearch-data/
+/modules/00-pcap-forensics/sample-pcaps/extract_files/*
