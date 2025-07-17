@@ -7,3 +7,9 @@ Laboratório de análise forense de tráfego de rede com Zeek + ELK.
 2. Execute:
 ```bash
 docker-compose up -d
+
+## Não esquecer de dar o comando para criar dashboards
+
+```
+filebeat setup
+```

@@ -1,27 +1,27 @@
-filebeat.inputs:
-- type: filestream
-  enabled: true
-  paths:
-    - /logs/*.log
-  fields:
-    event_source: "zeek"
-  fields_under_root: true
+filebeat.modules:
+  - module: zeek
+    connection:
+      enabled: true
+      var.paths: ["/sample-pcaps/conn.log"]
+    dns:
+      enabled: true
+      var.paths: ["/sample-pcaps/dns.log"]
+    http:
+      enabled: true
+      var.paths: ["/sample-pcaps/http.log"]
 
 output.elasticsearch:
-  hosts: ["elasticsearch:9200"]
-  indices:
-    - index: "zeek-http-%{+yyyy.MM.dd}"
-      when.contains:
-        event.dataset: "zeek.http"
-    - index: "zeek-conn-%{+yyyy.MM.dd}"
-      when.contains:
-        event.dataset: "zeek.conn"
-    - index: "zeek-dns-%{+yyyy.MM.dd}"
-      when.contains:
-        event.dataset: "zeek.dns"
+  hosts: ["http://elasticsearch:9200"]
+
+setup.kibana:
+  host: "http://kibana:5601"
+
+setup.ilm.enabled: false
+index: "zeek-%{+yyyy.MM.dd}"
 
 processors:
   - add_fields:
       target: ""
       fields:
         project: "soc-autonomo"
+
