@@ -6,22 +6,25 @@ services:
     volumes:
       - ./modules/00-pcap-forensics/sample-pcaps:/pcap-input
       - ./modules/00-pcap-forensics/logs:/logs
-    command: ["/bin/bash", "-c", "while true; do ./modules/00-pcap-forensics/scripts/process_pcap.sh; sleep 10; done"]
+    command: ["/bin/bash", "-c", "/process_pcap.sh"]
+
+  filebeat:
+    image: docker.elastic.co/beats/filebeat:8.12.0
+    volumes:
+      - ./filebeat.yml:/usr/share/filebeat/filebeat.yml
+      - ./modules/00-pcap-forensics/logs:/logs
+    depends_on:
+      - elasticsearch
 
   elasticsearch:
     image: docker.elastic.co/elasticsearch/elasticsearch:8.12.0
     environment:
-      - discovery.type=single-node
+      - discovery.type=single_node
       - ES_JAVA_OPTS=-Xms1g -Xmx1g
-    volumes:
-      - elasticsearch_data:/usr/share/elasticsearch/data
 
   kibana:
     image: docker.elastic.co/kibana/kibana:8.12.0
     ports:
       - "5601:5601"
-    depends_on:
-      - elasticsearch
-
 volumes:
   elasticsearch_data:
