@@ -9,6 +9,13 @@ filebeat.modules:
     http:
       enabled: true
       var.paths: ["/logs/http.log"]
+    weird:
+      enabled: true
+      var.paths: ["/logs/weird.log"]
+    notice:
+      enabled: true
+      var.paths: ["/logs/notice.log"]
+      
 
 output.elasticsearch:
   hosts: ["http://elasticsearch:9200"]
