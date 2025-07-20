@@ -1,3 +1,6 @@
+filebeat.config.modules:
+  enabled: false  # Desativa TODOS os módulos (incluindo Zeek)
+
 filebeat.modules:
   - module: zeek
     connection:
@@ -32,6 +35,3 @@ processors:
       fields:
         project: "soc-autonomo"
 
-filebeat.config.modules:
-  path: ${path.config}/modules.d/*.yml
-  reload.enabled: false

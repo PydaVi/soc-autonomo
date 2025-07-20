@@ -16,7 +16,10 @@ RUN apt-get update && \
 RUN curl -L -O https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-8.12.0-linux-x86_64.tar.gz && \
     tar xzvf filebeat-8.12.0-linux-x86_64.tar.gz && \
     mv filebeat-8.12.0-linux-x86_64 /usr/share/filebeat && \
-    rm filebeat-8.12.0-linux-x86_64.tar.gz
+    rm filebeat-8.12.0-linux-x86_64.tar.gz && \
+    rm -rf /usr/share/filebeat/modules.d && \  
+    mkdir -p /usr/share/filebeat/modules.d && \
+    chmod 000 /usr/share/filebeat/modules.d  # Remove todas as permissões
 
 # 3. Configurações
 ENV PATH="/opt/zeek/bin:/usr/share/filebeat:${PATH}"

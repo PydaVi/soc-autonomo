@@ -4,9 +4,9 @@ services:
   zeek:
     build: .
     volumes:
-      - ./modules/00-pcap-forensics/sample-pcaps:/pcap-input
-      - ./modules/00-pcap-forensics/logs:/logs
       - ./modules/00-pcap-forensics/scripts:/scripts
+      - ./modules/00-pcap-forensics/sample-pcaps:/pcap-input:ro  # Somente leitura
+      - ./modules/00-pcap-forensics/logs:/usr/local/zeek/spool/logs  # PADRÃO do Zeek
       - ./modules/00-pcap-forensics/config/local.zeek:/usr/local/zeek/share/zeek/site/local.zeek
     command: ["/bin/bash", "-c", "/scripts/process_pcap.sh"]
 
@@ -16,7 +16,6 @@ services:
       - ./filebeat.yml:/usr/share/filebeat/filebeat.yml
       - ./modules/00-pcap-forensics/logs:/logs
       - ./modules/00-pcap-forensics/sample-pcaps/:/sample-pcaps/
-      - ./modules.d/zeek.yml:/usr/share/filebeat/modules.d/zeek.yml:ro
     depends_on:
       - elasticsearch
 
