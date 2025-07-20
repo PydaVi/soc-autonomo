@@ -2,6 +2,7 @@
 *.log
 *.pcap
 *.processed
+/home/pydavi/soc-autonomo/modules/00-pcap-forensics/suricata/logs/eve.json
 /elasticsearch-data/
 /modules/00-pcap-forensics/sample-pcaps/extract_files/
 /modules/00-pcap-forensics/zeek/logs/extract_files/
