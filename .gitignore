@@ -3,6 +3,5 @@
 *.pcap
 *.processed
 /elasticsearch-data/
-/modules/00-pcap-forensics/sample-pcaps/extract_files/*
-/modules/00-pcap-forensics/zeek/logs/extract_files/*
-/modules/00-pcap-forensics/suricata/logs/extract_files/*
+/modules/00-pcap-forensics/sample-pcaps/extract_files/
+/modules/00-pcap-forensics/zeek/logs/extract_files/
