@@ -1,0 +1,935 @@
+
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+
+
+
+
+
+<meta http-equiv="Expires" content="Tue, 12 May 1962 1:00:00 GMT">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="no-cache">
+<meta http-equiv="Content-type" CONTENT="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-language" CONTENT="en">
+<title>Live view  - AXIS 206 Network Camera</title>
+
+<noscript>Your browser has JavaScript turned off.<br>For the user interface to work effectively, you must enable JavaScript in your browser and reload/refresh this page.
+</noscript>
+
+<!-- GLOBAL JAVASCRIPTS -->
+<script language="JavaScript" type="text/javascript"><!--
+function launch(url) {
+  var w = 480, h = 340;
+
+  if (document.all) {
+    /* the following is only available after onLoad */
+    w = document.body.clientWidth;
+    h = document.body.clientHeight;
+  }
+  else if (document.layers) {
+    w = window.innerWidth;
+    h = window.innerHeight;
+  }
+
+  var popW = 465, popH = 570;
+  var leftPos = (w-popW)/2, topPos = (h-popH)/2;
+
+  self.name = "opener";
+  remote = open(url, 'helpWin', "resizable,scrollbars,status,width=" + popW + ",height="+popH+",left="+leftPos+",top="+topPos+"");
+}
+
+function openPopUp(thePage, theName, theWidth, theHeight)
+{
+  var someFeatures = 'scrollbars=yes,toolbar=0,location=no,directories=0,status=0,menubar=0,resizable=1,width=' + theWidth + ',height=' + theHeight;
+  var aPopUpWin = window.open(thePage, theName, someFeatures);
+
+  if (navigator.appName == "Netscape") {
+    aPopUpWin.focus();
+  }
+}
+
+function showStatus(msg)
+{
+  window.status = msg
+  return true
+}
+// -->
+</script><script language="JavaScript">
+<!--
+function CSS ()
+{
+  if ((navigator.appVersion.indexOf("Mac") != -1) && (navigator.appName.indexOf("Netscape") != -1)) {
+    document.write('<link rel="stylesheet" href="/css/mac_ns.css" type="text/css">');
+
+  } else if ((navigator.appVersion.indexOf("Mac") != -1) && (navigator.appName.indexOf("Microsoft Internet Explorer") != -1)) {
+    document.write('<link rel="stylesheet" href="/css/mac_ie.css" type="text/css">');
+
+  } else if ((navigator.appVersion.indexOf("Win") != -1) && (navigator.appName.indexOf("Netscape") != -1)) {
+    document.write('<link rel="stylesheet" href="/css/win_ns.css" type="text/css">');
+
+  } else if ((navigator.appVersion.indexOf("Win") != -1) && (navigator.appName.indexOf("Microsoft Internet Explorer") != -1)) {
+    document.write('<link rel="stylesheet" href="/css/win_ie.css" type="text/css">');
+
+  } else if (navigator.appName.indexOf("Netscape") != -1) {
+    // Unix or other system
+    document.write('<link rel="stylesheet" href="/css/win_ns.css" type="text/css">');
+  } else {         
+    document.write('<link rel="stylesheet" href="/css/other.css" type="text/css">');
+  }
+
+  // Wrapper for old browsers which can't handle getElementById
+  if(!document.getElementById) {
+     document.getElementById = function(element)
+     {
+       return eval("document.all." + element);
+     }
+  }
+}
+// -->
+</script>
+<script language="JavaScript" type="text/javascript"><!--
+CSS ();
+// -->
+</script>
+
+<script language="JavaScript" type="text/javascript">
+<!--
+function SubmitForm()
+{
+  document.WizardForm.submit();
+}
+// -->
+</script>
+
+<!-- END GLOBAL JAVASCRIPTS --><!-- $root_Properties_PTZ_PTZ = yes -->
+
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+
+if ((navigator.appName == "Microsoft Internet Explorer") &&
+    (navigator.platform != "MacPPC") &&
+    (navigator.platform != "Mac68k")) {
+  var browser = "IE"
+} else {
+  var browser = "Netscape"
+}
+
+function drawBoxHeader(title)
+{
+  var args = drawBoxHeader.arguments;
+  var fill = (args.length >= 2 ? args[1] : false);
+
+  document.write('' +
+'<td' + (fill ? ' width="100%"' : '') + '>' +
+'  <table width="100%" height="46" cellpadding=0 cellspacing=0 border=0>' +
+'    <tr>' +
+'      <td colspan=2 width=5 background="/pics/gray_corner_lt_5x50px.gif"><img src="/pics/blank.gif" width=5 height=5 border=0 alt=""></td>' +
+'      <td valign="top" align="center" width="100%" background="/pics/gray_t_5x50px.gif" height="5" class="funcText" nowrap>' + title + '</td>' +
+'      <td colspan=2 width=5  background="/pics/gray_corner_rt_5x50px.gif"><img src="/pics/blank.gif" width=5 height=5 border=0 alt=""></td>' +
+'    </tr>' +
+'    <tr>' +
+'      <td width=1 class="lineBg"><img src="/pics/blank.gif" width=1 height=5 alt=""></td>' +
+'      <td width=4><img src="/pics/blank.gif" width=4 height=5 alt=""></td>' +
+'      <td valign="middle" align="center" width="100%">' +
+'        <table cellpadding=0 cellspacing=0 border=0>' +
+'          <tr>');
+}
+
+function drawBoxFooter()
+{
+  document.write('' +
+'          </tr>' +
+'        </table>' +
+'      </td>' +
+'      <td width=4><img src="/pics/blank.gif" width=4 height=5 alt=""></td>' +
+'      <td width=1 class="lineBg"><img src="/pics/blank.gif" width=1 height=5 alt=""></td>' +
+'    </tr>' +
+'    <tr>' +
+'      <td colspan=2 width=5 height=5><img src="/pics/line_corner_lb_5x5px.gif" width=5 height=5 border=0 alt=""></td>' +
+'      <td width="100%" height=5 background="/pics/line_b_100x5px.gif"><img src="/pics/blank.gif" width=1 height=5 alt=""></td>' +
+'      <td colspan=2 width=5 height=5><img src="/pics/line_corner_rb_5x5px.gif" width=5 height=5 border=0 alt=""></td>' +
+'    </tr>' +
+'  </table>' +
+'</td>');
+}
+
+function drawBoxButton(pic, title)
+{
+  var args = drawBoxButton.arguments;
+  var url =      (args.length >= 3 ? args[2] : null);
+  var name =     (args.length >= 4 ? args[3] : null);
+  var pressed =  (args.length >= 5 ? args[4] : null);
+  var on_click = (args.length >= 6 ? args[5] : null);
+  var width =    (args.length >= 7 ? args[6] : 27);
+  var height =   (args.length >= 8 ? args[7] : 27);
+
+  if (url) {
+    if (name) {
+      document.write('<td valign="middle" align="left">' +
+                     '<a href="' + url + '" target="Temp"' +
+                     (on_click ? ' onClick="' + on_click+ '"' : '') +
+                     ' onMouseDown="movepic(\'' + name + '\', \'' + pressed + '\')"' +
+                     ' onMouseUp="movepic(\'' + name + '\', \'' + pic + '\')"' +
+                     '>' +
+                     '<img name="' + name + '" src="' + pic + '" ' +
+                     'width=' + width + ' height=' + height + ' border=0 ' +
+                     (title ? ' title="' + title + '" alt="' + title + '"' : '') +
+                     '>' +
+                     '</a>' +
+                     '</td>');
+    } else {
+      document.write('<td valign="middle" align="left">' +
+                     '<a href="' + url + '" target="_self"' +
+                     (on_click ? ' onClick="' + on_click+ '"' : '') +
+                     '>' +
+                     '<img src="' + pic + '" ' +
+                     'width=' + width + ' height=' + height + ' border=0 ' +
+                     (title ? ' title="' + title + '" alt="' + title + '"' : '') +
+                     '>' +
+                     '</a>' +
+                     '</td>');
+    }
+  } else {
+    document.write('<td valign="middle" align="left">' +
+                   '<img src="' + pic + '" ' +
+                   'width=' + width + ' height=' + height + ' border=0' +
+                   (title ? ' title="' + title + '" alt="' + title + '"' : '') +
+                   '>' +
+                   '</td>');
+  }
+}
+
+function drawBoxSpacer()
+{
+  document.write('<td width=5><img src="/pics/blank.gif" width=5 height=5 alt=""></td>');
+}
+
+
+function listVideoSources()
+{
+  var formInt = document.listFormInt
+  var formExt = document.listFormExt
+  var presetForm = document.listFormPreset;
+  var form = document.WizardForm
+  var imageType = '/mjpg/';
+  var imageSource = 'video.mjpg';
+
+  if ((1 > 1) ||
+      ext_sources
+     ) {
+    document.write('<select name="videoList" onChange="selectView()" >');
+
+    if ((1 == 1) &&
+        !ext_sources
+       ) {
+      document.write('<option class="gray">&nbsp;----------------</option>');
+    } else {
+      for (i = 0; i < 1; i++) {
+        var camera_nice_nbr = i + 1;
+        document.write('<option value="' + imageType + '' + imageSource + '"');
+        if (imageType + '' + imageSource == '/mjpg/video.mjpg' ||
+            '/jpg/image.jpg' == '/mjpg/video.mjpg') {
+          document.write(' selected');
+        }
+
+        document.write('>' + formInt['root_ImageSource_I' + i + '_Name'].value + '</option>');
+      }
+    }
+var viewAppletIE = "no";
+var viewAppletOther = "no";
+// Don't show external sources while using Java applet as Default Viewer. An unsigned applet doesn't have permission to access remote hosts.
+if (((browser == "IE") && (viewAppletIE == "no")) || ((browser != "IE") && (viewAppletOther == "no"))) {
+    if (formExt.elements.length > 0) {
+      for (i = 0; i < formExt.elements.length; i += 3) {
+        var aTempString = formExt.elements[i].name
+        var videoNr = aTempString.substring(20, aTempString.lastIndexOf('_'))
+        var external = escape(formExt['root_ExternalVideo_E' + videoNr + '_ImagePath'].value);
+
+        if (browser == "IE" || formExt['root_ExternalVideo_E' + videoNr + '_ImagePath'].value.indexOf("mpeg4") == -1) {
+          document.write('<option value="' + external + '"');
+          if (formExt['root_ExternalVideo_E' + videoNr + '_ImagePath'].value == '/mjpg/video.mjpg')
+            document.write(' selected');
+          document.write('>' + formExt['root_ExternalVideo_E' + videoNr + '_Name'].value + '</option>');
+        }
+      }
+    }
+}
+    document.write('</select>');
+//} else {
+//  document.write(formInt.root_ImageSource_I0_Name.value);
+  }
+}
+
+function zoom(size)
+{
+  var url = document.URL;
+
+  if (url.indexOf("?") == -1) {
+    url += "?size=" + size
+  } else if (url.indexOf("size=") == -1) {
+    url += "&size=" + size
+  } else {
+    var searchStr = "size=1"
+    var replaceStr = "size=" + size
+    var re = new RegExp(searchStr , "g")
+    url = url.replace(re, replaceStr)
+  }
+
+  document.location = url;
+}
+
+var aNewImagePath;
+
+function reloadPage()
+{
+  document.location = aNewImagePath;
+}
+
+function selectView()
+{
+  var form = document.WizardForm;
+  var source = form.videoList.options[form.videoList.selectedIndex].value;
+  var params = source.split('&');
+  var newCamera = null;
+  var presetName = null;
+
+  if ((params[1] != null) && ("no" == "no")) {
+    newCamera = (params[1].split('='))[1];
+    presetName = unescape((params[2].split('='))[1]);
+    changeView(params[0], newCamera, presetName);
+  } else {
+    changeView(source, newCamera, presetName);
+  }
+}
+
+function changeView(imagePath)
+{
+  var args = changeView.arguments;
+  var newCamera  = (args.length >= 2 ? args[1] : null);
+  var presetName = (args.length >= 3 ? args[2] : null);
+  var newSize    = (args.length >= 4 ? args[3] : null);
+  var other      = (args.length >= 5 ? args[4] : null);
+
+  var reload = false;
+  // the whole Live View design is built on page reload >-(
+  // must reload initial sequence mode view to toggle buttons etc
+  reload = (other != null && other.search("seq=yes"));
+  var delay = 0;
+
+  reload |= (imagePath != '/mjpg/video.mjpg');
+  if (reload) {
+    var size = newSize;
+
+    if (size == null) {
+      size = 1;
+    }
+    if (size != null) {
+      size = '&size=' + size;
+    }
+    aNewImagePath = '/view/view.shtml?imagePath=' + imagePath + size;
+    if (other != null)
+      aNewImagePath += other;
+    setTimeout("reloadPage()", delay);
+  }
+}
+
+var seqNext = null;
+
+function doSequence(size) {
+  var formSeq = document.listFormSeq;
+  var formExt = document.listFormExt;
+  var presetForm = document.listFormPreset;
+  var seqSources = new Array();
+  var seqNumbers = new Array();
+  var seqTimes = new Array();
+  var cameraNbr;
+  var presetName = null;
+  var imagePath;
+  var next;
+
+  for (var i = 0; i < formSeq['root_Sequence_S0_NbrOfSources'].value; i++) {
+    seqSources[i] = formSeq['root_Sequence_S0_Source_S' + i + '_Type'].value;
+    seqNumbers[i] = formSeq['root_Sequence_S0_Source_S' + i + '_Number'].value;
+    seqTimes[i] = formSeq['root_Sequence_S0_Source_S' + i + '_Time'].value;
+  }
+
+  if (seqNext != null) {
+    next = seqNext;
+  } else {
+    next = 0;
+  }
+
+  imagePath = "";
+  if (seqSources[next] == 'Ext') {
+    imagePath = formExt['root_ExternalVideo_E' + seqNumbers[next] + '_ImagePath'].value;
+  }
+  else if (seqSources[next] == 'Quad') {
+    cameraNbr = 'quad';
+  } else {
+    cameraNbr = parseInt(seqNumbers[next]) + 1;
+  }
+
+  if (imagePath == "") {
+      imagePath = '/mjpg/' + cameraNbr + '/video.mjpg';
+  }
+
+  var nextNext;
+  if (formSeq['root_Sequence_S0_RandomEnabled'].value == "yes")
+    nextNext = Math.floor(Math.random() * formSeq['root_Sequence_S0_NbrOfSources'].value);
+  else
+    nextNext = next + 1;
+  if (nextNext >= formSeq['root_Sequence_S0_NbrOfSources'].value)
+    nextNext = 0;
+
+  seqNext = nextNext;
+  if (browser == "IE" || imagePath.indexOf("mpeg4") == -1) {
+    changeView(imagePath, cameraNbr, presetName, size, '&seq=yes&next=' + nextNext + '&sequencetime=' + seqTimes[next]);
+
+    t1 = setTimeout("doSequence(size)", 1000 * seqTimes[next]);
+  } else {
+    t1 = setTimeout("doSequence(size)", 0);
+  }
+}
+
+
+function snapshot(imagepath)
+{
+  var no = document.WizardForm.amount.value++
+  var picturepath = imagepath.replace(/video/, "image")
+  if (imagepath.indexOf("mpeg4") != -1)
+  {
+    picturepath = picturepath.replace(/rtsp/, "http")
+    picturepath = picturepath.replace(/mpeg4/g, "jpg")
+    picturepath = picturepath.replace(/media.amp/g, "image.jpg")
+  } else {
+    picturepath = picturepath.replace(/mjpg/g, "jpg")
+  }
+  var page = 'snapshot.shtml?picturepath=' + picturepath
+  var time = new Date()
+  var timestamp = time.getTime()
+
+  page += '&timestamp=' + timestamp + '&width=' + 640
+  openPopUp(page, 'Take_snapshot' + [no] + '', 640 + 45, 480 + 75 )
+}
+function movepic(img_name, img_src)
+{
+  document[img_name].src = img_src;
+}
+
+function auto(Path)
+{
+  parent.frames[1].location = Path
+}
+
+function AbsoluteOrRelative(form)
+{
+  var url = document.URL;
+  if (form.AbsOrRel.selectedIndex == 0)
+    var relative = "no";
+  else
+    var relative = "yes_no_cross";
+  if (url.indexOf("?") == -1) {
+    url += "?relative=" + relative;
+  } else if (url.indexOf("relative=") == -1) {
+    url += "&relative=" + relative;
+  } else {
+    var searchStr = "relative=";
+    var replaceStr = "relative=" + relative;
+    var re = new RegExp(searchStr , "g");
+    url = url.replace(re, replaceStr);
+  }
+  document.location = url;
+}
+
+function video(imagepath)
+{
+  var resolution = 0
+  var width = 0
+  var height = 0
+
+  if (imagepath.indexOf("resolution=") != -1) {
+    var resStart = imagepath.indexOf("resolution=")
+    var resStop = imagepath.indexOf("&", resStart)
+    if (resStop == -1) resStop = imagepath.length
+    resolution = imagepath.substring(resStart + 11, resStop)
+    width = parseInt(resolution.substring(0, resolution.indexOf('x')))
+    height = parseInt(resolution.slice((resolution.indexOf('x') + 1)))
+  } else if (imagepath.indexOf("mpeg4") != -1) { 	 
+    width = 640
+    height = 480
+    resolution = width + 'x' + height
+  } else {
+    width = 640
+    height = 480
+    resolution = width + 'x' + height
+  }
+
+  if ((imagepath.indexOf("rotation=90") != -1) || (imagepath.indexOf("rotation=270") != -1)) {
+    var aTempWidth = width
+    width = height
+    height = aTempWidth
+    resolution = width + 'x' + height
+  }
+
+  if ('1' != '1') {
+    width = width * 1
+    height = height * 1
+  }
+  var width_height = 'width="' + width + '" height="' + height + '"';
+  var use_activex = 0;
+  var use_java = 0;
+  var use_spush = 0;
+  var use_flash = 0;
+  var use_still = 0;
+  var viewer = "still";
+
+  if ((navigator.appName == "Microsoft Internet Explorer") && (navigator.platform != "MacPPC") && (navigator.platform != "Mac68k")) {
+    viewer = "activex";
+  } else {
+    viewer = "spush";
+  }
+
+  if (viewer.indexOf("activex") != -1) {
+    use_activex = 1;
+  }
+  if (viewer.indexOf("spush") != -1) {
+    use_spush = 1;
+  }
+  if (viewer.indexOf("flash") != -1) {
+    use_flash = 1;
+  }
+  if (viewer.indexOf("java") != -1) {
+    if (imagepath.indexOf("mpeg4") == -1) {
+      use_java = 1;
+    } else {
+      use_activex = 1;
+    }
+  }
+  if ((viewer.indexOf("still") != -1) || !(use_activex || use_spush || use_flash || use_java)) {
+    if (imagepath.indexOf("mpeg4") == -1) {
+      use_still = 1;
+    } else {
+      use_activex = 1;
+     }
+  }
+  if (use_activex) {
+    height = height + 54
+    var notAuthorizedText = "The installation of the MPEG-4 Decoder has been disabled. Contact the Administrator of this AXIS 206 (rev 2).";
+    var authorizedText = "Click here to install or upgrade the MPEG-4 Decoder.";
+    var installDecoderText1 = "<b>MPEG-4 Decoder</b>, which enables streaming video in Microsoft Internet Explorer, has not been installed or could not be registered on this computer.";
+    var installDecoderText2 = "To <a href=\"javascript:launch('/incl/license.shtml')\">install or upgrade</a> the MPEG-4 Decoder, you must have Administration rights on this computer and you must answer Yes <br>when asked if you wish to allow the installation. AXIS 206 (rev 2) can also be configured to show still images.";
+    var notAuthorizedAacText = "The installation of the AAC Decoder has been disabled. Contact the Administrator of this AXIS 206 (rev 2).";
+    var authorizedAacText = "Click here to install or upgrade the AAC Decoder.";
+    var installAacDecoderText1 = "<b>AAC Decoder</b>, which enables streaming AAC audio in Microsoft Internet Explorer, has not been installed or could not be registered on this computer.";
+    var installAacDecoderText2 = "To <a href=\"javascript:launch('/incl/aac_license.shtml')\">install or upgrade</a> the AAC Decoder, you must have Administration rights on this computer and you must answer Yes <br>when asked if you wish to allow the installation.";
+
+    var installText1 = "which enables streaming"; 
+    var videoText = "video";
+    var audioText = "audio";
+    var installText2 = "in Microsoft Internet Explorer, has not been installed or could not be registered on this computer.";
+    var installText3 = "To install or upgrade the";
+    var installText4 = ", you must have Administration rights on this computer and you must answer Yes <br>when asked if you wish to allow the installation. AXIS 206 (rev 2) can also be configured to show still images.";
+    DrawAMC("AXIS 206 (rev 2)", "AXIS Media Control", height, width, imagepath, "DE625294-70E6-45ED-B895-CFFA13AEB044", "AMC.cab", "3,32,31,0", "yes", "", "", "1", "", "", "", "no", "no", "", "no", installText1, videoText, installText2, installText3, installText4, "", "");
+
+    document.write("<br>");
+  }
+
+  if (use_spush) {
+    document.write('<table cellspacing=0 cellpadding=0 border=0><tr><td colspan=3 align="center">');
+      var output = '<img id="stream" SRC="' + imagepath + '" ' + width_height;
+      var view_NoImageTxt = "If no image is displayed, there might be too many viewers, or the browser configuration may have to be changed. See help for detailed instructions on how to do this."
+      output += ' border=0 ALT="' + view_NoImageTxt + '">';
+    output += '<br>';
+    document.write(output);
+    var fullImagePath = document.stream.src
+    var stillImagePath = "/jpg/image.jpg"
+    if (imagepath.indexOf("/axis-cgi/mjpg/video.cgi") != -1) {
+      var searchStr = "/axis-cgi/mjpg/video.cgi"
+      var replaceStr = "/jpg/image.jpg"
+      var re = new RegExp(searchStr , "g")
+      stillImagePath = imagepath.replace(re, replaceStr)
+    }
+
+    document.write('</td></tr>');
+    document.write('<tr><td colspan=3 align="center" nowrap class="usedBoxStyle">');
+    document.write('<table cellspacing=2 cellpadding=2 border=0 width="100%">');
+    document.write('<tr height="32" id="videoItems" class="shownItems">');
+    document.write('<td align="right" width="40"><a href="javascript:void(0)" onClick="stopStartStream(\'' + stillImagePath + '\')"><img src="/pics/stop_button_27x27px.gif" width="27" height="27" alt="Stop stream" title="Stop stream" border="0"></a></td>');
+    document.write('<td width="27"><a href="javascript:void(0)" onClick="stopStartStream(\'' + fullImagePath + '\')"><img src="/pics/play_button_27x27px.gif" width="27" height="27" alt="Start stream" title="Start stream" border="0"></a></td>');
+    document.write('<td>&nbsp;</td></tr>');
+    document.write('</table></td></tr></table>');
+  }
+
+
+  if (use_flash) {
+    var view_NeedFlashPluginTxt = "You need a Shockwave Flash plugin, get it from:"
+    document.write('<EMBED src="/axis-cgi/mjpg/video.swf?resolution=' + resolution +'&camera=1" ' +
+    'quality=high bgcolor=#000000 ' + width_height +
+    ' TYPE="application/x-shockwave-flash" swLiveConnect=TRUE' +
+    ' PLUGINSPAGE="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash">' +
+    '</EMBED>' +
+    '<NOEMBED>' + view_NeedFlashPluginTxt +
+    '<a href="http://www.macromedia.com/shockwave/download/">Macromedia</a>.' +
+    '</NOEMBED><br>');
+  }
+
+  if (use_java) {
+    var playerWidth = 640
+    var playerHeight = 480 + 105
+    if (playerWidth < 300)
+      playerWidth = 300
+
+    if (imagepath.indexOf("http") != -1) {
+      var addrEnd = imagepath.indexOf("/", 8)
+      var addr = imagepath.substring(0, addrEnd)
+    } else {
+      var addr = ""
+    }
+
+    document.write('<APPLET archive="ama.jar" codeBase="/java/ama" code="ama.MediaApplet" width="' + playerWidth + '" height="' + playerHeight + '">');
+    document.write('<PARAM NAME="code" VALUE="ama.MediaApplet">');
+    document.write('<PARAM NAME="archive" VALUE="ama.jar">');
+    document.write('<PARAM NAME="codebase" VALUE="/java/ama">');
+    document.write('<PARAM NAME="ama_cgi-path" VALUE="axis-cgi">');
+    document.write('<PARAM NAME="cache_archive" VALUE="ama.jar">');
+    document.write('<PARAM NAME="cache_version" VALUE="0.91.0.0">');
+    document.write('<PARAM NAME="ama_plugins" VALUE="">');
+    document.write('<PARAM NAME="type" VALUE="application/x-java-applet;version=1.4">');
+    document.write('<PARAM NAME="ama_url" VALUE="' + addr +
+    '/axis-cgi/mjpg/video.cgi?camera=1&resolution=640x480">');
+    document.write("Your browser does not support Java")
+    document.write("</APPLET><br>");
+  }
+
+  if (use_still) {
+    var picturepath = imagepath.replace(/video/, "image")
+    picturepath = picturepath.replace(/mjpg/g, "jpg")
+    picturepath = picturepath.replace(/rtsp/, "http")
+    picturepath = picturepath.replace(/mpeg4/g, "jpg")
+    picturepath = picturepath.replace(/media.amp/g, "image.jpg")
+
+    document.write('<img SRC="' + picturepath + '" border=0 ' + width_height +'><br>');
+  }
+}
+
+function stopStartStream(path)
+{
+  theDate = new Date();
+  if (path.indexOf("?") != -1)
+    path += "&"
+  else
+    path += "?"
+  path += "timestamp=" + theDate.getTime()
+  document.stream.src = path
+}
+
+function goto_camera(cam)
+{
+  cam = '';
+
+  var imagePath;
+  if (browser == "IE") {
+    imagePath = '/mjpg/' + cam + 'video.mjpg';
+  } else {
+    imagePath = '/mjpg/' + cam + 'video.mjpg';
+  }
+  changeView(imagePath);
+}
+
+// -->
+</SCRIPT><!-- $camnbr = quad --><!-- $external = no -->
+
+<SCRIPT SRC="/incl/activeX.js?id=8"></SCRIPT>
+</head>
+  <body class="bodyBg" topmargin="0" leftmargin="15" marginwidth="0" marginheight="0" onLoad="DrawTB('no', '/mjpg/video.mjpg', '1', '', 'no');">
+
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+  var t1;
+  var seqOn = "no";
+
+function sequence()
+{
+  var size;
+  if (seqOn == 'no') {
+    seqOn = 'yes';
+    size = 1;
+    doSequence(size);
+  } else {
+    clearTimeout(t1);
+    seqOn = 'no';
+    link = document.URL;
+    if (link.indexOf('seq=yes' != -1)) {
+      var regexp = /seq=yes&/;
+      link = link.replace(regexp, "");
+    }
+    document.location = link;
+  }
+  return;
+}
+
+// -->
+</SCRIPT><!-- $ptzpresets = "yes" -->
+
+<form name="listFormInt"><input type="hidden" name="root_ImageSource_NbrOfSources" value="1" ><input type="hidden" name="root_ImageSource_I0_Name" value="Camera" ><input type="hidden" name="root_ImageSource_I0_Sensor_WhiteBalance" value="auto" ><input type="hidden" name="root_ImageSource_I0_Sensor_Exposure" value="auto" ><input type="hidden" name="root_ImageSource_I0_Sensor_ExposurePriority" value="50" ><input type="hidden" name="root_ImageSource_I0_Sensor_Brightness" value="50" ><input type="hidden" name="root_ImageSource_I0_Sensor_ColorLevel" value="50" ><input type="hidden" name="root_ImageSource_I0_Sensor_Sharpness" value="0" ><input type="hidden" name="root_ImageSource_I0_Sensor_BlacklevelCorrection" value="0" >
+</form>
+<form name="listFormExt">
+</form>
+
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+
+// Calculate the number of external sources that are supported by this browser
+var ext_sources = 0;
+if (browser == "IE") {
+  ext_sources = document.listFormExt.elements.length/3;
+} else {
+  for (var i = 0; i < document.listFormExt.elements.length; i += 3) {
+    var aTempString = document.listFormExt.elements[i].name
+    var videoNr = aTempString.substring(20, aTempString.lastIndexOf('_'))
+    if (document.listFormExt['root_ExternalVideo_E' + videoNr + '_ImagePath'].value.indexOf("mpeg4") == -1) {
+      ext_sources++;
+    }
+  }
+}
+// -->
+</SCRIPT>
+
+<form name="listFormSeq">
+</form>
+
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+
+// Calculate the number of sequence sources that are supported by this browser
+if (document.listFormSeq.length > 0) {
+  var seq_sources = 0;
+  if (browser == "IE") {
+    seq_sources = document.listFormSeq['root_Sequence_S0_NbrOfSources'].value;
+  } else {
+    for (var i = 0; i < document.listFormSeq['root_Sequence_S0_NbrOfSources'].value; i++) {
+      var type = document.listFormSeq['root_Sequence_S0_Source_S' + i + '_Type'].value;
+      if (type != 'Ext') {
+        seq_sources++;
+      } else {
+        var num = document.listFormSeq['root_Sequence_S0_Source_S' + i + '_Number'].value;
+        var path = document.listFormExt['root_ExternalVideo_E' + num + '_ImagePath'].value;
+        if (path.indexOf("mpeg4") == -1) {
+          seq_sources++;
+        }
+      }
+    }
+  }
+}
+
+// -->
+</SCRIPT>
+
+<form name="outputsForm">
+</form>
+<table width="100%" cellspacing=0 cellpadding=0 border=0><tr><td align="center">
+<form name="WizardForm" method="POST">
+<input type="hidden" name="root_Layout_Trigger_T0_Enabled" value="">
+<input type="hidden" name="root_Layout_Trigger_T1_Enabled" value="">
+<input type="hidden" name="root_Layout_Trigger_T2_Enabled" value="">
+<input type="hidden" name="root_Layout_Trigger_T3_Enabled" value="">
+<input type="hidden" name="root_Layout_Trigger_T4_Enabled" value="">
+<input type="hidden" name=amount value="0">
+
+  <br>
+  <table width=774 cellspacing=0 cellpadding=0 border=0>
+    <tr>
+      <td colspan=2><img src="/pics/line_corner_lt_5x5px.gif" width=5 height=5 border=0 alt=""></td>
+      <td colspan=4 background="/pics/line_t_100x5px.gif"><img src="/pics/line_t_100x5px.gif" width=768 height=5 border=0 alt=""></td>
+      <td colspan=2><img src="/pics/line_corner_rt_5x5px.gif" width=5 height=5 border=0 alt=""></td>
+    </tr>
+    <tr>
+      <td class="lineBg"><img src="/pics/blank.gif" width="1" border=0 alt=""></td>
+      <td><img src="/pics/blank.gif" width="4" height=1 border=0 alt=""></td>
+      <td colspan=4 valign="middle" align="left" width="100%">
+        <table border=0 cellspacing=0 cellpadding=0 width="100%">
+          <tr>
+            <td><a href="http://www.axis.com/" target=_blank><IMG src="/pics/logo_70x29px.gif" width=68 height=29 border=0 title="Axis" alt="Axis"></A></td>
+            <td class="topTitle" align="center">AXIS 206 Network Camera</td>
+            <td align="right">
+              <table cellpadding=0 cellspacing=5 border=0>
+                <tr>
+                  <td><a href="/" target="_top" class="linkActive">Live View</a></td><td>|</td>
+                  <td>
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+  document.write('<a href="')
+var address = 'https://' + location.host
+  document.write('/operator/basic.shtml" class="linkInActive" target="_top">Setup</a>')
+// -->
+</SCRIPT>
+
+                  </td><td>|</td>
+                  <td><a href="#" onClick="javascript:launch('/help/liveview_h.shtml?cntrlQue='); return false;" class="linkInActive">Help</a></td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+      </td>
+
+      <td><img src="/pics/blank.gif" width="4" border=0 alt=""></td>
+      <td class="lineBg"><img src="/pics/blank.gif" width=1 height=1 alt=""></td>
+    </tr>
+    <tr>
+      <td class="lineBg"><img src="/pics/blank.gif" width=1 height=5 alt=""></td>
+      <td colspan=6><img src="/pics/blank.gif" width=1 height=5 alt=""></td>
+      <td class="lineBg"><img src="/pics/blank.gif" width=1 height=5 alt=""></td>
+    </tr>
+    <tr>
+      <td colspan=2><img src="/pics/line_corner_lb_5x5px.gif" width=5 height=5 alt=""></td>
+      <td colspan=4 background="/pics/line_b_100x5px.gif"><img src="/pics/blank.gif" width=764 height=5 alt=""></td>
+      <td colspan=2><img src="/pics/line_corner_rb_5x5px.gif" width=5 height=5 alt=""></td>
+    </tr>
+    <tr>
+      <td colspan=8><img src="/pics/blank.gif" width=1 height=5 border=0 alt=""></td>
+    </tr>
+
+    <tr>
+      <td colspan=8>
+        <table width="100%" cellpadding=0 cellspacing=0 border=0>
+          <tr>
+
+<SCRIPT LANGUAGE="JavaScript">
+<!--// $root_Layout_ShowVideoFormatDropDown = yes
+
+// Draw the sequence buttons and the list of sources
+
+if ((1 > 1) ||
+    (document.listFormExt.elements.length > 0)) {
+  drawBoxHeader('Source', true);
+} else {
+  drawBoxHeader('&nbsp;', true);
+}
+
+if ((("" != "yes") ||
+     ("" == "yes")) &&
+    (seq_sources > 1)) {
+  drawBoxButton('/pics/button_sequence_27x27px.gif',
+                "Click to view sequence mode",
+                'JavaScript:sequence()');
+  drawBoxButton('/pics/button_one_gray_27x27px.gif',
+                "Sequence mode - Stopped");
+} else {
+  drawBoxButton('/pics/space.gif', null, null, null, null, null, 1);
+}
+document.write('<td valign="middle" align="left">&nbsp;</td>');
+
+document.write('<td valign="middle" align="left">');
+listVideoSources()
+document.write('</td>');
+
+drawBoxFooter();
+
+// Draw the trigger buttons
+
+function addTriggerButtons(button_name, indx)
+{
+  if (document.WizardForm["root_Layout_Trigger_T" + indx + "_Enabled"].value != "yes") {
+    return;
+  }
+
+  drawBoxSpacer();
+  drawBoxHeader(button_name);
+  drawBoxButton('/pics/on_blue_button_27x27px.gif',
+                button_name + " on",
+                '/axis-cgi/io/virtualinput.cgi?action=' + [indx + 6] + ':/',
+                'buttonOn',
+                '/pics/on_blue_pressed_button_27x27px.gif');
+  drawBoxButton('/pics/off_blue_button_27x27px.gif',
+                button_name + " off",
+                '/axis-cgi/io/virtualinput.cgi?action=' + [indx + 6] + ':\\',
+                'buttonOff',
+                '/pics/off_blue_pressed_button_27x27px.gif');
+  drawBoxFooter();
+}
+
+addTriggerButtons("Trigger", 0);
+
+// -->
+</SCRIPT>
+
+          </tr>
+        </table>
+      </td>
+    </tr>
+
+    <tr>
+      <td colspan=8><img src="/pics/blank.gif" width=1 height=5 border=0 alt=""></td>
+    </tr>
+    <tr>
+      <td colspan=2><img src="/pics/line_corner_lt_5x5px.gif" width=5 height=5 border=0 alt=""></td>
+      <td colspan=4 background="/pics/line_t_100x5px.gif"><img src="/pics/blank.gif" width=768 height=5 border=0 alt=""></td>
+      <td colspan=2><img src="/pics/line_corner_rt_5x5px.gif" width=5 height=5 border=0 alt=""></td>
+    </tr>
+
+    <tr>
+      <td width=1 class="lineBg"><img src="/pics/blank.gif" width=1 height=1 border=0 alt=""></td>
+      <td valign="top" align="center" colspan=6 width=773>
+
+        <table border=0 cellpadding=0 cellspacing=0 width=776 height="100%">
+          <tr height=197>
+            <td valign="top"></td>
+            <td valign="top" class="normalText" align="center" rowspan=2 colspan="2">
+           <div id="filterinstallocation"></div>
+
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+
+video('/mjpg/video.mjpg');
+
+// -->
+</SCRIPT>
+    </form> <!-- wizardForm -->
+    </td>
+  </tr>
+</table>
+      </td>
+      <td width=4><img src="/pics/blank.gif" width=1 height=1 border=0 alt=""></td>
+      <td width=1 class="lineBg"><img src="/pics/blank.gif" width=1 height=1 border=0 alt=""></td>
+    </tr>
+    <!-- ################################################################ -->
+    <!-- Defines the table width -->
+    <tr>
+      <td colspan=1 width=1 class="lineBg"><img src="/pics/blank.gif" width=1 height=1 alt=""></td>
+      <td colspan=1 width=4><img src="/pics/blank.gif" width=1 height=1 alt=""></td>
+      <td colspan=1 width=180><img src="/pics/blank.gif" width=1 height=1 alt=""></td>
+      <td colspan=1 width=1><img src="/pics/blank.gif" width=1 height=1 alt=""></td>
+      <td colspan=1 width=199><img src="/pics/blank.gif" width=1 height=1 alt=""></td>
+      <td colspan=1 width=384><img src="/pics/blank.gif" width=1 height=1 alt=""></td>
+      <td colspan=1 width=4><img src="/pics/blank.gif" width=1 height=1 alt=""></td>
+      <td colspan=1 width=1 class="lineBg"><img src="/pics/blank.gif" width=1 height=1 alt=""></td>
+    </tr>
+    <!-- ################################################################ -->
+    <tr>
+      <td colspan=2><img src="/pics/line_corner_lb_5x5px.gif" width=5 height=5 alt=""></td>
+      <td colspan=1 background="/pics/line_b_100x5px.gif"><img src="/pics/blank.gif" width=1 height=1 alt=""></td>
+      <td colspan=2 background="/pics/line_b_100x5px.gif"><img src="/pics/blank.gif" width=1 height=1 alt=""></td>
+      <td colspan=1 background="/pics/line_b_100x5px.gif"><img src="/pics/blank.gif" width=1 height=1 alt=""></td>
+      <td colspan=2><img src="/pics/line_corner_rb_5x5px.gif" width=5 height=5 alt=""></td>
+    </tr>
+    <tr>
+      <td colspan=8><img src="/pics/blank.gif" width=1 height=5 border=0 alt=""></td>
+    </tr>
+    <tr>
+      <td width=1><img src="/pics/blank.gif" width="1" height="1" border=0 alt=""></td>
+      <td colspan=6 valign="middle" align="left">
+        <table cellpadding=0 cellspacing=5 border=0>
+          <tr>
+            <td>&nbsp;</td>
+          </tr>
+        </table>
+      </td>
+      <td width=1><img src="/pics/blank.gif" width="1" height="1" border=0 alt=""></td>
+    </tr>
+  </table>
+</td></tr></table>
+</body>
+</html>

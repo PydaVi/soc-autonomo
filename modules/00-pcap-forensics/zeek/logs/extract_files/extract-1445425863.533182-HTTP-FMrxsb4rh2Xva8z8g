@@ -1,0 +1,68 @@
+function initrefresh()
+{
+	var time = parseInt(document.configure.refresh_rate.value);
+
+	if(time==0) return;	
+	setTimeout("refresh_page()", time*1000);
+}
+
+function refresh_page()
+{
+	var time = parseInt(document.configure.refresh_rate.value);
+	
+	if (check_browser())
+	{
+		var elempara = document.getElementById("statistics_menu_0");
+		if (elempara.style.display != "none")
+		{
+			//window.location.reload();
+			//document.configure.action="stserial.asp";
+			document.configure.submit();
+			
+		}
+		else
+		{
+			setTimeout("refresh_page()", time*1000);
+		}
+	}
+	else
+	{
+		//window.location.reload();
+		//document.configure.action="stserial.asp";
+		document.configure.submit();
+	}
+}
+
+function check_browser()
+{
+	var isNNav, isMSIE, isKonq
+	var Version = parseInt(navigator.appVersion);
+
+	if ( Version >= 4) {
+		isNNav = (navigator.appName == "Netscape")
+		isMSIE = (navigator.appName.indexOf("Microsoft") != -1)
+		isKonq = (navigator.appName.indexOf("Konqueror") != -1)
+	}
+	if (isMSIE) {
+		if (navigator.appVersion.indexOf("Macintosh") != -1) {
+		} else if (navigator.appVersion.indexOf("Windows") != -1) {
+		} else {
+		}
+	} else if (isNNav) {
+		if (Version >= 5) {
+			if (navigator.appVersion.indexOf("Macintosh") != -1) {
+			} else if (navigator.appVersion.indexOf("Windows") != -1) {
+			} else if (navigator.appVersion.indexOf("X11") != -1) {
+			} else {
+			}
+		} else {
+			return false
+//			alert("User \"" + user.value + "\" added successfully. To see the user list correctly, please select [Save to flash]");
+		}
+	} else if (isKonq) {
+	}
+
+	return true;
+}
+
+

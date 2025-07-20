@@ -1,0 +1,375 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+<HEAD>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html;CHARSET=iso-8859-1">
+   <TITLE>FL IL 24 BK-PAC&nbsp;- Device Information: Local Diagnostics</TITLE>
+<link rel="stylesheet" href="phoenix_fl.css">
+<script language="JavaScript" src="phoenix_fl.js"></script>
+
+</HEAD>
+<BODY>
+<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="750">
+   <TR>
+           <TD WIDTH="200" VALIGN="TOP" >
+                   <TABLE BORDER="1" WIDTH="100%" CELLPADDING="2" CELLSPACING="0">
+                           <TR>
+                                   <TD ALIGN="CENTER"> <A HREF="http://www.phoenixcontact.com" target="_blank"><IMG SRC="img/pxclogo.gif" WIDTH="142"
+                                           HEIGHT="36" ALIGN="BOTTOM" ALT="Phoenix Contact Logo" BORDER="0" class="logo"></A><br>
+            <img src="img/device_s.gif" width="72" height="72" alt="FL IL 24 BK-PAC" class="devicesymbol"><br>
+            <span class="devicetyp">FL IL 24 BK-PAC</span> </TD>
+                           </TR>
+                           <TR>
+          <TD VALIGN="TOP"> 
+            <TABLE BORDER="0" CELLPADDING="2" CELLSPACING="0" WIDTH="100%" class="tablecolor">
+              <TR>
+                <TD COLSPAN="3" class="menu">[ <A HREF="generalinst.htm">General 
+                  Instructions</A> ]</TD>
+                                                   </TR>
+                                                   <TR>
+                <TD COLSPAN="3" class="menuopen">Device Information</TD>
+                                                   </TR>
+                                                   <TR>
+                                                           <TD WIDTH="10">&nbsp;</TD>
+                                                           <TD WIDTH="15">&nbsp;</TD>
+                <TD class="menu2"><A HREF="deviceinfo.htm">General</A></TD>
+                                                   </TR>
+                                                   <TR>
+                                                           <TD WIDTH="10">&nbsp;</TD>
+                                                           <TD WIDTH="15">&nbsp;</TD>
+                <TD><A HREF="techdata.htm" class="menu2">Technical Data</A></TD>
+                                                   </TR>
+                                                   <TR>
+                                                           <TD WIDTH="10">&nbsp;</TD>
+                                                           <TD WIDTH="15">&nbsp;</TD>
+                <TD><A HREF="hwinstall.htm" class="menu2">Hardware Installation</A></TD>
+                                                   </TR>
+                                                   <TR>
+                                                           <TD WIDTH="10">&nbsp;</TD>
+                                                           <TD WIDTH="15"><IMG SRC="img/sel.gif" WIDTH="11" HEIGHT="11" ALIGN="BOTTOM" BORDER="0"></TD>
+                <TD><A HREF="local_diagnostics.htm" class="menu2">Local Diagnostics</A></TD>
+                                                   </TR>
+                                                   <TR>
+                <TD COLSPAN="3" class="menu">[ <A HREF="ipconfig.htm">Device Configuration</A> 
+                  ]</TD>
+                                                   </TR>
+                                                   <TR>
+                <TD COLSPAN="3" class="menu">[ <A HREF="services.htm">Inline Station</A> ]</TD>
+                                                   </TR>
+                                                   <TR>
+                <TD COLSPAN="3" class="menu">[ <A HREF="index.htm">Home</A> ]</TD>
+                                                   </TR>
+                                           </TABLE>
+                                   </TD>
+                           </TR>
+                   </TABLE>
+           </TD>
+           
+    <TD VALIGN="TOP" WIDTH="550"> 
+      <table width="100%" border="1" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td> 
+            <table width="100%" border="0" cellspacing="0" cellpadding="2">
+              <tr class="tablecolor"> 
+                <td width="60%" class="bmk" >FL IL 24 BK&nbsp;</td>
+                <td width="40%" class="bmk_zeit" > 
+                  <p align="right">&nbsp; 
+                    <script language="JavaScript">
+                                           <!--
+                                           document.write(head_part1());
+                                           document.write(head_part2());
+                                           document.write(head_part3());
+                                           //-->
+                                   </script>
+                  </p>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+      <BR> 
+      <TABLE BORDER="1" CELLPADDING="2" CELLSPACING="0" WIDTH="90%" ALIGN="right">
+        <TR> 
+          <th COLSPAN="2"> Local Diagnostics</th>
+        </TR>
+        <TR> 
+          <TD COLSPAN="2" class="tablehead2"> <a name="statusled_powersupply"></a>Power 
+            Supply</TD>
+        </TR>
+        <TR> 
+          <TD WIDTH="40%" align="center"> 
+            <P>US</p>
+          </TD>
+          <TD WIDTH="60%" class="tablecolor"> 
+            <p>Segment Voltage (green LED)</p>
+          </TD>
+        </TR>
+        <TR> 
+          <TD WIDTH="40%" align="center"> 
+            <P>UM</p>
+          </TD>
+          <TD WIDTH="60%" class="tablecolor"> 
+            <p>Main Voltage (green LED)</p>
+          </TD>
+        </TR>
+        <TR> 
+          <TD WIDTH="40%" align="center"> 
+            <P>UL</p>
+          </TD>
+          <TD WIDTH="60%" class="tablecolor"> 
+            <p>Logic Voltage (green LED)</p>
+          </TD>
+        </TR>
+        <TR> 
+          <TD COLSPAN="2" class="tablehead2"> <a name="statusled_ethernet"></a>Ethernet</TD>
+        </TR>
+        <TR> 
+          <TD WIDTH="40%" align="center"> 
+            <P>100</p>
+          </TD>
+          <TD WIDTH="60%" class="tablecolor"> 
+            <p>100 Mbps wire speed (green LED)</p>
+          </TD>
+        </TR>
+        <TR> 
+          <TD WIDTH="40%" align="center"> 
+            <P>FD</p>
+          </TD>
+          <TD WIDTH="60%" class="tablecolor"> 
+            <p>Full Duplex (green LED)</p>
+          </TD>
+        </TR>
+        <TR> 
+          <TD WIDTH="40%" align="center"> 
+            <P>COL</p>
+          </TD>
+          <TD WIDTH="60%" class="tablecolor"> 
+            <p>Collision (red LED)</p>
+          </TD>
+        </TR>
+        <TR> 
+          <TD WIDTH="40%" align="center"> 
+            <P>XMT</p>
+          </TD>
+          <TD WIDTH="60%" class="tablecolor"> 
+            <p>Transmit (green LED)</p>
+          </TD>
+        </TR>
+        <TR> 
+          <TD WIDTH="40%" align="center"> 
+            <P>RCV</p>
+          </TD>
+          <TD WIDTH="60%" class="tablecolor"> 
+            <p>Receive (yellow LED)</p>
+          </TD>
+        </TR>
+        <TR> 
+          <TD WIDTH="40%" height="17" align="center"> 
+            <P>LNK</p>
+          </TD>
+          <TD WIDTH="60%" class="tablecolor"> 
+            <p>Link (green LED)</p>
+          </TD>
+        </TR>
+        <TR> 
+          <TD COLSPAN="2" class="tablehead2"> <a name="7segment"></a>7-segment 
+            display - error-free operation</TD>
+        </TR>
+        <TR> 
+          <TD WIDTH="40%" align="center"> 
+            <P>01 </p>
+          </TD>
+          <TD WIDTH="60%" class="tablecolor"> 
+            <p>The boot loader is trying to identify network parameters from a 
+              BootP/DHCP server via BootP requests.</p>
+          </TD>
+        </TR>
+        <TR> 
+          <TD WIDTH="40%" align="center"> 
+            <P>02 </p>
+          </TD>
+          <TD WIDTH="60%" class="tablecolor"> 
+            <p>Preparing to start the decompressed firmware in the RAM.</p>
+          </TD>
+        </TR>
+        <TR> 
+          <TD WIDTH="40%" align="center"> 
+            <P>03 </p>
+          </TD>
+          <TD WIDTH="60%" class="tablecolor"> 
+            <p>TFTP download started.</p>
+          </TD>
+        </TR>
+        <TR> 
+          <TD WIDTH="40%" align="center"> 
+            <P>04 </p>
+          </TD>
+          <TD WIDTH="60%" class="tablecolor"> 
+            <p>Firmware loaded via the network is written to the Flash.</p>
+          </TD>
+        </TR>
+        <TR> 
+          <TD WIDTH="40%" align="center"> 
+            <P>05 </p>
+          </TD>
+          <TD WIDTH="60%" class="tablecolor"> 
+            <p>The new firmware has been successfully written to the Flash.</p>
+          </TD>
+        </TR>
+        <TR> 
+          <TD WIDTH="40%" align="center"> 
+            <P>bo </p>
+          </TD>
+          <TD WIDTH="60%" class="tablecolor"> 
+            <p>Decompressing the firmware from the Flash into the RAM.</p>
+          </TD>
+        </TR>
+        <TR> 
+          <TD WIDTH="40%" align="center"> 
+            <P>PP </p>
+          </TD>
+          <TD WIDTH="60%" class="tablecolor"> 
+            <p>Plug&Play is activated.</p>
+          </TD>
+        </TR>
+        <TR> 
+          <TD WIDTH="40%" align="center"> 
+            <P>PP. </p>
+          </TD>
+          <TD WIDTH="60%" class="tablecolor"> 
+            <p>Plug&Play is activated and at least one modbus/tcp client is connected.</p>
+          </TD>
+        </TR>
+        <TR> 
+          <TD WIDTH="40%" align="center"> 
+            <P>-- </p>
+          </TD>
+          <TD WIDTH="60%" class="tablecolor"> 
+            <p>Firmware started.</p>
+          </TD>
+        <TR> 
+          <TD WIDTH="40%" align="center"> 
+            <P>--. </p>
+          </TD>
+          <TD WIDTH="60%" class="tablecolor"> 
+            <p>Firmware is running and at least one modbus/tcp client is connected.</p>
+          </TD>
+        </TR>
+        <TR> 
+          <TD COLSPAN="2" class="tablehead2"> 7-segment display - in the event 
+            of errors</TD>
+        </TR>
+        <TR> 
+          <TD WIDTH="40%" align="center"> 
+            <P>17 </p>
+          </TD>
+          <TD WIDTH="60%" class="tablecolor"   > 
+            <p>Error during TFTP download.</p>
+          </TD>
+        </TR>
+        <TR> 
+          <TD WIDTH="40%" align="center"> 
+            <P>19 </p>
+          </TD>
+          <TD WIDTH="60%" class="tablecolor"   > 
+            <p>Invalid firmware detected.</p>
+          </TD>
+        </TR>
+        <TR> 
+          <TD WIDTH="40%" align="center"> 
+            <P>80 </p>
+          </TD>
+          <TD WIDTH="60%" class="tablecolor"   > 
+            <p>General firmware error.</p>
+          </TD>
+        </TR>
+        <TR> 
+          <TD WIDTH="40%" align="center"> 
+            <P>82 </p>
+          </TD>
+          <TD WIDTH="60%" class="tablecolor"   > 
+            <p>Error during the startup of the local bus.</p>
+          </TD>
+        </TR>
+        <TR> 
+          <TD WIDTH="40%" align="center"> 
+            <P>83 </p>
+          </TD>
+          <TD WIDTH="60%" class="tablecolor"   > 
+            <p>Configuration of the local bus changed.</p>
+          </TD>
+        </TR>
+        <TR> 
+          <TD WIDTH="40%" align="center"> 
+            <P>8A </p>
+          </TD>
+          <TD WIDTH="60%" class="tablecolor"   > 
+            <p>Event Watchdog occurred.</p>
+          </TD>
+        </TR>
+        <TR> 
+          <TD WIDTH="40%" align="center"> 
+            <P>bF </p>
+          </TD>
+          <TD WIDTH="60%" class="tablecolor"> 
+            <p>Bus Failure (local bus).</p>
+          </TD>
+        </TR>
+        <TR> 
+          <TD WIDTH="40%" align="center"> 
+            <P>bF. </p>
+          </TD>
+          <TD WIDTH="60%" class="tablecolor"> 
+            <p>Bus Failure (local bus) - at least one modbus/tcp client is connected.</p>
+          </TD>
+        </TR>
+        <TR> 
+          <TD WIDTH="40%" align="center"> 
+            <P>PF </p>
+          </TD>
+          <TD WIDTH="60%" class="tablecolor"> 
+            <p>Peripheral Fault (local bus).</p>
+          </TD>
+        </TR>
+        <TR> 
+          <TD WIDTH="40%" align="center"> 
+            <P>PF. </p>
+          </TD>
+          <TD WIDTH="60%" class="tablecolor"> 
+            <p>Peripheral Fault (local bus) - at least one modbus/tcp client is connected.</p>
+          </TD>
+        </TR>
+        <TR> 
+          <TD WIDTH="40%" align="center"> 
+            <P>nF </p>
+          </TD>
+          <TD WIDTH="60%" class="tablecolor"   > 
+            <p>Network Failure (Ethernet).</p>
+          </TD>
+        </TR>
+        <TR> 
+          <TD WIDTH="40%" align="center"> 
+            <P>nF. </p>
+          </TD>
+          <TD WIDTH="60%" class="tablecolor"   > 
+            <p>Network Failure (Ethernet) - at least one modbus/tcp client is connected.</p>
+          </TD>
+        </TR>
+        <TR> 
+          <TD WIDTH="40%" align="center"> 
+            <P>nC </p>
+          </TD>
+          <TD WIDTH="60%" class="tablecolor"   > 
+            <p>Not Connected (Ethernet) - all modbus/tcp connections are lost.</p>
+          </TD>
+        </TR>
+        <TR> 
+          <TD COLSPAN="2" ALIGN="right"><SPAN class="information">For all other error codes displayed, please contact Phoenix Contact!</SPAN></TD>
+        </TR>
+      </TABLE>
+       </TD>
+   </TR>
+</TABLE>
+<p></P>
+</BODY>
+</HTML>

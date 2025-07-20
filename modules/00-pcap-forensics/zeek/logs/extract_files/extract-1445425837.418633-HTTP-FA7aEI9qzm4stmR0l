@@ -1,0 +1,67 @@
+function WritePort(sNo,sTitle,sProto,sIP,sPort,sRProto,sSerial,sBGColor)
+{
+	document.write("<tr>");
+	document.write("<td class=configtablecontent></td>");
+	//document.write("<a href=\"portenable.asp?port=" +  sNo + "\" title=\"port " + sNo + " configuration\">");
+	document.write("<td class=configtablecontent onMouseOver=\'this.style.cursor=\"hand\"; this.style.backgroundColor=\"" + sBGColor + "\"; this.style.color=\"#000000\";\'onMouseOut=\'this.style.cursor=\"auto\"; this.style.backgroundColor=\"#FFFFFF\"; this.style.color=\"#3d3d3d\";\'>");
+	document.write("<center><a href=\"portenable.asp?port=" + sNo + "\" title=\"port " + sNo +" configuration\">" + sNo + "</a></center></td>");//</a>");
+	//document.write("<center>" + sNo + "</center></td></a>");
+	//document.write("<a href=\"portenable.asp?port=" + sNo + "\" title=\"port " + sNo + " configuration\">");
+	document.write("<td class=configtablecontent onMouseOver=\'this.style.cursor=\"hand\"; this.style.backgroundColor=\"" + sBGColor + "\"; this.style.color=\"#000000\";\'onMouseOut=\'this.style.cursor=\"auto\"; this.style.backgroundColor=\"#FFFFFF\"; this.style.color=\"#3d3d3d\";\'>");
+	document.write("<a href=\"portenable.asp?port=" + sNo + "\" title=\"port " + sNo + " configuration\">" + sTitle + "</a></td>");//</a>");
+	//document.write(sTitle + "</td></a>");
+	document.write("<td class=configtablecontent><center>" + sProto + "</center></td>");
+	document.write("<td class=configtablecontent>" + sIP + "</td>");
+	document.write("<td class=configtablecontent>" + sPort+ "</td>");
+	document.write("<td class=configtablecontent>" + sRProto + "</td>");
+	document.write("<td class=configtablecontent>" + sSerial + "</td>");
+}
+function WriteVirtualPort(sNo,benable,sTitleDisp,sTitleReal,sProto,sIP,sPort,sRProto,sVirtual,sBGColor)
+{
+	document.write("<tr>");
+	document.write("<td></td>");
+	document.write("<td align=center><input type=checkbox name=chk"+sNo+" value=\""+sNo+"\"><input type=hidden name=port"+sNo+" value=\""+sNo+"\"><input type=hidden name=venable"+sNo+" value=\""+benable+"\"></td>");
+	document.write("<td class=configtablecontent onMouseOver=\'this.style.cursor=\"hand\"; this.style.backgroundColor=\"" + sBGColor + "\"; this.style.color=\"#000000\";\'onMouseOut=\'this.style.cursor=\"auto\"; this.style.backgroundColor=\"#FFFFFF\"; this.style.color=\"#3d3d3d\";\'>");
+	document.write("<a href=\"portenable.asp?port="+sNo+"&venable="+benable+"&vtitle="+sTitleReal+"&vpset="+sVirtual+"\" title=\"remote port "+(parseInt(sNo)-100)+" configuration\">"+sTitleDisp +"</a><input type=hidden name=vtitle"+sNo+" value=\""+sTitleReal+"\"></td>");
+	document.write("<td class=configtablecontent><center>" + sProto + "</center></td>");
+	document.write("<td class=configtablecontent>" + sIP + "</td>");
+	document.write("<td class=configtablecontent>" + sPort+ "</td>");
+	document.write("<td class=configtablecontent>" + sRProto + "</td>");
+	document.write("<td class=configtablecontent>" + sVirtual + "<input type=hidden name=vpset"+sNo+" value=\""+sVirtual+"\"></td>");
+}
+function checkSubmit(form,mode)
+{
+	var i=0;
+	var offset=0;
+	var cnt=0;
+	if(mode==1){
+		offset=parseInt(form.offset.value);
+		cnt=parseInt(form.cnt.value);
+		for(i=0;i<cnt;i++){
+			if(form.elements[offset+5*i].checked) return true;
+		}
+		alert("Please select remote ports to remove.");
+		return false;
+	}else{
+		return checkTitle(form.title);
+	}
+}
+function checkTitle(comp)
+{
+	if(comp.value==""){
+		alert("Please provide a non null remote port title.");
+		comp.focus();
+		return false;
+	}
+	return true;
+}
+function checkAll()
+{
+	var form=document.remove;
+	var i;
+	var cnt=parseInt(form.cnt.value);
+	var offset=parseInt(form.offset.value);
+	for(i=0;i<cnt;i++){
+		form.elements[offset+5*i].checked=form.chkall.checked;
+	}
+}

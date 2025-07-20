@@ -1,0 +1,139 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Cache-Control" content="no-cache">
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<script type="text/javascript">
+<!--
+
+	function touchLasttime()
+	{
+							theName = "lasttime";
+					expires = null;
+					now=new Date( );
+					document.cookie =theName + "=" + now.getTime() + "; path=/" + ((expires == null) ? " " : "; expires = " +expires.toGMTString());
+
+	}
+	function CheckCookie()
+	{
+		
+	}
+
+	function sendDate2DUT(){
+		document.getElementById("eip_setting_form").submit();
+	}
+
+	function disableIGMP(disable){
+		if(disable==1){
+		    document.getElementById("disableIGMPCheckBox").disabled=true;
+		}else{
+		    document.getElementById("disableIGMPCheckBox").disabled=false;
+		}
+	}
+
+	function initWeb(){
+		disableIGMP(0);
+ 
+		AccountDiff();
+	}
+	
+	function AccountDiff(){
+
+		CheckCookie();
+		theData = "";
+		theName = "AccountName508=";
+		theCookie = document.cookie+";";
+		start = theCookie.indexOf(theName);
+		if(start != -1){
+			end=theCookie.indexOf(";",start);
+			theData = unescape(theCookie.substring(start+theName.length,end));
+		}
+		var i;
+		if(theData=="user"){
+			for(i=0;i<document.getElementsByTagName("input").length;i++){
+				document.getElementsByTagName("input")[i].disabled=true;
+			}
+		}
+	}
+
+-->
+</script>
+<style type="text/css">
+body {
+	font-family: Arial, Helvetica, sans-serif, Marlett;
+	font-size: 0.8em;
+	background-color: #CCE6E6; /* Light-blue background */
+	color: #000000; /* Black word */
+	margin-top: 10;
+	margin-left: 12;
+}
+
+div.indent {
+	position: relative;
+	top: 15%;
+	left: 15%;
+}
+
+h1 {
+	font-size: 1.5em;
+	color: #007C60; /* Green title */
+	font-style: bold;
+	text-align: left;
+}
+
+td.warning {
+	font-size: 0.8em;
+	color: #FF0000;
+	text-align: left;
+}
+
+</style>
+</head>
+
+<body onLoad="initWeb();" topmargin="10" leftmargin="3" >
+<form method="POST" id="eip_setting_form" action="/goform/EIPSetting" onClick="touchLasttime()" onkeypress="touchLasttime()" target="mid">
+<table id="eip_content" name="eip_content" width="670" border="0" class="indent" >
+	<tr>
+		<td width="10%" align="left" ><h1>Ethernet/IP</h1></td>
+		<td width="20%" align="left" ></td>
+		<td width="70%" align="left" ></td>
+	</tr>
+
+
+	<tr>
+		<td width="10%" align="left" ></td>
+		<td width="20%" align="left" >
+			<input type="radio" id="EIPCheckBox" name="EIPCheckBox" onclick="disableIGMP(1)" value="on">
+ Enable
+		</td>
+		<td width="70%" align="left" >
+			(Enable IGMP Snooping automatically after activating)
+		</td>
+	</tr>
+
+	<tr>
+		<td width="10%" align="left" ></td>
+		<td width="20%" align="left" >
+			<input type="radio" id="EIPCheckBox" name="EIPCheckBox" onclick="disableIGMP(0)" value="off" checked >
+ Disable
+		</td>
+		<td width="70%" align="left" >
+			<input id="disableIGMPCheckBox" name="disableIGMPCheckBox" type="checkbox"> (Disable IGMP Snooping after activating)
+		</td>
+	</tr>
+
+	
+	<tr>
+		<td width="10%" align="left" ></td>
+		<td width="20%" align="left" >
+			<img onclick="sendDate2DUT()" src="activate_button.gif" onMouseover="document.body.style.cursor='hand'" onMouseout="document.body.style.cursor='default'" >
+		</td>
+		<td width="70%" align="left" >
+		</td>
+		</tr>
+</table>	
+
+</form>
+</body>
+</html>

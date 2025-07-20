@@ -1,0 +1,189 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+<HEAD>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html;CHARSET=iso-8859-1">
+   <META HTTP-EQUIV="cache-control" CONTENT="no-cache">
+   <TITLE>FL IL 24 BK-PAC&nbsp;- Inline Station: Remote Diagnostics</TITLE>
+<link rel="stylesheet" href="phoenix_fl.css">
+<script language="JavaScript" src="phoenix_fl.js"></script>
+
+   <SCRIPT LANGUAGE="JavaScript">
+           <!-- 
+      function show_window() { 
+         var win = null; 
+         win = window.open("online_diagnostics.htm","onlinediagnostics","resizable=yes,scrollbars=auto,width=300,height=300,screenX=0,screenY=0"); 
+         win.opener.self; 
+         win.focus; 
+      } 
+           // --> 
+   </SCRIPT>
+
+</HEAD>
+<BODY>
+<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="750">
+  <TR>
+    <TD WIDTH="200" VALIGN="TOP"> 
+      <TABLE BORDER="1" WIDTH="100%" CELLPADDING="2" CELLSPACING="0">
+        <TR>
+          <TD ALIGN="CENTER"> <A HREF="http://www.phoenixcontact.com" target="_blank"><IMG SRC="img/pxclogo.gif" WIDTH="142"
+                                           HEIGHT="36" ALIGN="BOTTOM" ALT="Phoenix Contact Logo" BORDER="0" class="logo"></A><br>
+            <img src="img/device_s.gif" width="72" height="72" alt="FL IL 24 BK-PAC" class="devicesymbol"><br>
+            <span class="devicetyp">FL IL 24 BK-PAC</span> </TD>
+        </TR>
+        <TR>
+          <TD VALIGN="TOP"> 
+            <TABLE BORDER="0" CELLPADDING="2" CELLSPACING="0" WIDTH="100%" class="tablecolor"  >
+              <TR> 
+                <TD COLSPAN="3" class="menu">[ <A HREF="generalinst.htm">General 
+                  Instructions</A> ]</TD>
+              </TR>
+              <TR> 
+                <TD COLSPAN="3" class="menu">[ <A HREF="deviceinfo.htm">Device 
+                  Information</A> ]</TD>
+              </TR>
+              <TR> 
+                <TD COLSPAN="3" class="menu">[ <A HREF="ipconfig.htm">Device 
+                  Configuration</A> ]</TD>
+              </TR>
+              <TR> 
+                <TD COLSPAN="3" class="menuopen">Inline Station</TD>
+              </TR>
+              <TR> 
+                <TD WIDTH="10">&nbsp;</TD>
+                <TD WIDTH="14">&nbsp;</TD>
+                <TD class="menu2"><A HREF="services.htm">Services</A></TD>
+              </TR>
+              <TR> 
+                <TD WIDTH="10">&nbsp;</TD>
+                <TD WIDTH="14">&nbsp;</TD>
+                <TD class="menu2"><A HREF="pdmonitor.htm">Process Data Monitoring</A></TD>
+              </TR>
+              <TR> 
+                <TD WIDTH="10">&nbsp;</TD>
+                <TD WIDTH="14"><IMG SRC="img/sel.gif" WIDTH="11" HEIGHT="11" ALIGN="BOTTOM" BORDER="0"></TD>
+                <TD class="menu2"><A HREF="remote_diagnostics.htm">Remote Diagnostics</A></TD>
+              </TR>
+              <TR> 
+                <TD WIDTH="10">&nbsp;</TD>
+                <TD WIDTH="14">&nbsp;</TD>
+                <TD class="menu2"><A HREF="bus_configuration.htm">Bus Configuration</A></TD>
+              </TR>
+              <TR> 
+                <TD WIDTH="10">&nbsp;</TD>
+                <TD WIDTH="14">&nbsp;</TD>
+                <TD class="menu2"><A HREF="event_table.htm">Event Table</A></TD>
+              </TR>
+              <TR> 
+                <TD WIDTH="10">&nbsp;</TD>
+                <TD WIDTH="14">&nbsp;</TD>
+                <TD class="menu2"><A HREF="pcp_configuration.htm">PCP Configuration</A></TD>
+              </TR>
+              <TR> 
+                <TD COLSPAN="3" class="menu">[ <A HREF="index.htm">Home</A> ]</TD>
+              </TR>
+            </TABLE>
+          </TD>
+        </TR>
+      </TABLE>
+    </TD>
+    <TD VALIGN="TOP" WIDTH="550"> 
+      <table width="100%" border="1" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td> 
+            <table width="100%" border="0" cellspacing="0" cellpadding="2">
+              <tr class="tablecolor"> 
+                <td width="60%" class="bmk" >FL IL 24 BK&nbsp;</td>
+                <td width="40%" class="bmk_zeit" > 
+                  <p align="right">&nbsp; 
+                    <script language="JavaScript">
+                                           <!--
+                                           document.write(head_part1());
+                                           document.write(head_part2());
+                                           document.write(head_part3());
+                                           //-->
+                                   </script>
+                  </p>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+      <BR>      
+      <TABLE BORDER="1" CELLPADDING="2" CELLSPACING="0" WIDTH="490" align="right">
+        <TR> 
+          <TH COLSPAN="2">Remote Diagnostics</TH>
+        </TR>
+        <TR>
+          <TD WIDTH="40%">
+            <P>7 Segment Display</P>
+          </TD>
+          <TD WIDTH="60%" class="tablecolor" valign="middle">
+            <table width="100" height="100" border="2" cellspacing="0" cellpadding="0" align="center" bgcolor="#000000">
+              <tr>
+                <td>
+                  <div align="center"><font size="6" color="#FF0000"><b><font face="Arial, Helvetica, sans-serif">8 2                   </font></b></font></div>
+                </td>
+              </tr>
+            </table>
+          </TD>
+        </TR>
+        <TR>
+          <TD COLSPAN="2">
+            <TABLE BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%">
+              <TR> 
+                <TD WIDTH="3%">&nbsp;</TD>
+                <TD WIDTH="95%">
+                  <CENTER><P><I>Error during the startup of the local bus.</I></P></CENTER>
+                </TD>
+                <TD WIDTH="2%">&nbsp;</TD>
+              </TR>
+            </TABLE>
+          </TD>
+        </TR>
+        <TR>
+          <TD COLSPAN="2"><span class="pwddistance">&nbsp;</span> </TD>
+        </TR>
+        <TR> 
+          <TD WIDTH="40%"> 
+            <p>Diagnostic Status Register</p>
+          </TD>
+          <TD WIDTH="60%" class="tablecolor">
+            <P>
+<img src="img/checkbox_chk.gif" width="16" height="16"> 
+&nbsp;Controller board ready-to-operate<BR><img src="img/checkbox_nchk.gif" width="16" height="16"> 
+&nbsp;Selected configuration ready-to-operate<BR><img src="img/checkbox_nchk.gif" width="16" height="16"> 
+&nbsp;Data transmission active<BR><img src="img/checkbox_nchk.gif" width="16" height="16"> 
+&nbsp;Diagnostic routine active<BR><img src="img/checkbox_nchk.gif" width="16" height="16"> 
+&nbsp;Controller board/ hardware error<BR><img src="img/checkbox_chk.gif" width="16" height="16"> 
+&nbsp;Bus error<BR><img src="img/checkbox_nchk.gif" width="16" height="16"> 
+&nbsp;Peripheral fault<BR><img src="img/checkbox_nchk.gif" width="16" height="16"> 
+&nbsp;User error / parameterization            </P>
+          </TD>
+        </TR> 
+        <TR> 
+          <TD WIDTH="40%"> 
+            <p>Diagnostic Parameter Register</p>
+          </TD>
+          <TD WIDTH="60%" class="tablecolor">
+            <P>
+<A HREF="bus_configuration.htm">Error location is device 1.</A>            </P>
+          </TD>
+        </TR> 
+        <TR>
+          <TD COLSPAN="2"><span class="pwddistance">&nbsp;</span> </TD>
+        </TR>
+        <FORM ACTION="online_diagnostics" NAME="online_diagnostics">
+        <TR> 
+          <TD COLSPAN="2" ALIGN="CENTER">
+            <input type="button" name="onlineDiag" value="Online Diagnostics" onClick="show_window()">
+          </TD>
+        </TR> 
+        </FORM>
+      </TABLE>
+     </TD>
+   </TR>
+</TABLE>
+<p></P>
+</BODY>
+</HTML>

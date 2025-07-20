@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config-auth client="vpn" type="init" aggregate-auth-version="2">
+<version who="vpn">3.1.05160</version>
+<device-id device-type="MacBookAir4,1" platform-version="10.9.2" unique-id="B9A02C1F235A122A8553D90F63879B555F58B67EAC8CFB681CBF5CEC073A38F87413B9266A2569D8597B5675DBF03F9B3BFF415AC8F31CB7533B9B1761890254">mac-intel</device-id>
+<mac-address-list>
+<mac-address>31:89:9:5f:3b:df</mac-address></mac-address-list>
+<group-select>VPN</group-select>
+<group-access>https://192.168.88.115:443</group-access>
+</config-auth>

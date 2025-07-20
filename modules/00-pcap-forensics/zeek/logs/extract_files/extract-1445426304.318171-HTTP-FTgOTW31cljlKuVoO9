@@ -1,0 +1,195 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Cache-Control" content="no-cache">
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<script type="text/javascript">
+<!-- 
+    var j;
+    
+    //Edit By Jason 11.15 2004
+    //Change show event log from 1000 to 15/per page 
+    //{Start
+    function SelectList(form){		            
+		if(form.select_Eventlog_list.selectedIndex >=0)				
+			Show_frame.location.href="/goform/EventLogList?selectlist=" + form.select_Eventlog_list.selectedIndex;																				
+	}
+	//}End
+	function touchLasttime()
+	{
+							theName = "lasttime";
+					expires = null;
+					now=new Date( );
+					document.cookie =theName + "=" + now.getTime() + "; path=/" + ((expires == null) ? " " : "; expires = " +expires.toGMTString());
+
+	}
+	function CheckCookie()
+	{
+		
+	}	
+	function doClear(){
+		Show_frame.document.getElementById("showlog_form").action="/goform/EventLogList?setclear=1";
+		Show_frame.document.getElementById("showlog_form").submit();
+	}
+
+	function AccountDiff(){
+		CheckCookie();
+		theData = "";
+		theName = "AccountName508=";
+		theCookie = document.cookie+";";
+		start = theCookie.indexOf(theName);
+		if(start != -1){
+			end=theCookie.indexOf(";",start);
+			theData = unescape(theCookie.substring(start+theName.length,end));
+		}
+		var i;
+		if(theData=="user"){
+		    for(i=0;i<document.getElementsByTagName("input").length;i++){
+				document.getElementsByTagName("input")[i].disabled=true;				
+				document.getElementsByTagName("input")[i].style.backgroundColor="#F5F5F5";				
+			}
+			for(i=0;i<document.getElementsByTagName("img").length;i++){
+				document.getElementsByTagName("img")[i].disabled=true;
+				document.getElementsByTagName("img")[i].style.backgroundColor="#F5F5F5";
+			}		
+		}		
+	}
+	
+	function stopSubmit()
+	{
+		return false;
+	}	
+		
+//-->
+</script>
+<style type="text/css">
+<!--
+tr.style1{background-color: "#007C60";}
+tr.style2{background-color: "#FFFFFF";}
+//-->
+</style>
+</head>
+
+<body bgcolor="#CCE6E6" text="#000000" topmargin="10" leftmargin="12" onLoad="AccountDiff()">
+<form method="post" name="Setting_form" target="mid" onClick="touchLasttime()" onkeypress="touchLasttime()" onSubmit="return stopSubmit()">
+<div align="left">
+	<font size="5" face="Arial, Helvetica, sans-serif, Marlett" color="#007C60">	
+    <b>Event Log Table</b></font><br>	    
+</div>
+<div align="left">
+<table width="100%">
+	<tr>
+		<td width="5%"><div align="left"><font size="2" face="Arial, Helvetica, sans-serif, Marlett">
+    		</font></div></td>
+    	<td width="95%"><div align="left"><font size="2" face="Arial, Helvetica, sans-serif, Marlett">    	
+    	<select name="select_Eventlog_list" size="1" onChange="SelectList(this.form)">
+			<option value="1">Page 1/67</option>
+<option value="2">Page 2/67</option>
+<option value="3">Page 3/67</option>
+<option value="4">Page 4/67</option>
+<option value="5">Page 5/67</option>
+<option value="6">Page 6/67</option>
+<option value="7">Page 7/67</option>
+<option value="8">Page 8/67</option>
+<option value="9">Page 9/67</option>
+<option value="10">Page 10/67</option>
+<option value="11">Page 11/67</option>
+<option value="12">Page 12/67</option>
+<option value="13">Page 13/67</option>
+<option value="14">Page 14/67</option>
+<option value="15">Page 15/67</option>
+<option value="16">Page 16/67</option>
+<option value="17">Page 17/67</option>
+<option value="18">Page 18/67</option>
+<option value="19">Page 19/67</option>
+<option value="20">Page 20/67</option>
+<option value="21">Page 21/67</option>
+<option value="22">Page 22/67</option>
+<option value="23">Page 23/67</option>
+<option value="24">Page 24/67</option>
+<option value="25">Page 25/67</option>
+<option value="26">Page 26/67</option>
+<option value="27">Page 27/67</option>
+<option value="28">Page 28/67</option>
+<option value="29">Page 29/67</option>
+<option value="30">Page 30/67</option>
+<option value="31">Page 31/67</option>
+<option value="32">Page 32/67</option>
+<option value="33">Page 33/67</option>
+<option value="34">Page 34/67</option>
+<option value="35">Page 35/67</option>
+<option value="36">Page 36/67</option>
+<option value="37">Page 37/67</option>
+<option value="38">Page 38/67</option>
+<option value="39">Page 39/67</option>
+<option value="40">Page 40/67</option>
+<option value="41">Page 41/67</option>
+<option value="42">Page 42/67</option>
+<option value="43">Page 43/67</option>
+<option value="44">Page 44/67</option>
+<option value="45">Page 45/67</option>
+<option value="46">Page 46/67</option>
+<option value="47">Page 47/67</option>
+<option value="48">Page 48/67</option>
+<option value="49">Page 49/67</option>
+<option value="50">Page 50/67</option>
+<option value="51">Page 51/67</option>
+<option value="52">Page 52/67</option>
+<option value="53">Page 53/67</option>
+<option value="54">Page 54/67</option>
+<option value="55">Page 55/67</option>
+<option value="56">Page 56/67</option>
+<option value="57">Page 57/67</option>
+<option value="58">Page 58/67</option>
+<option value="59">Page 59/67</option>
+<option value="60">Page 60/67</option>
+<option value="61">Page 61/67</option>
+<option value="62">Page 62/67</option>
+<option value="63">Page 63/67</option>
+<option value="64">Page 64/67</option>
+<option value="65">Page 65/67</option>
+<option value="66">Page 66/67</option>
+<option value="67" selected >Page 67/67</option>
+
+			</select></font></div></td>
+	</tr>
+	<tr>
+		<td width="5%"><div align="left"><font size="2" face="Arial, Helvetica, sans-serif, Marlett">
+    		</font></div></td>
+    	<td width="95%"><div align="left"><font size="2" face="Arial, Helvetica, sans-serif, Marlett">    	
+			<table width="620" border="0" >
+  				<tr bgcolor="#007C60"> 
+    				<td width="8%"><div align="left"><font size="2" face="Arial, Helvetica, sans-serif, Marlett" color="#FFFFFF" >
+						Index</font></div></td>    
+					<td width="8%"><div align="left"><font size="2" face="Arial, Helvetica, sans-serif, Marlett" color="#FFFFFF" >
+						Bootup</font></div></td>    
+    				<td width="14%"><div align="left"><font size="2" face="Arial, Helvetica, sans-serif, Marlett" color="#FFFFFF" > 
+    					Date</font></div></td>
+    				<td width="14%"><div align="left"><font size="2" face="Arial, Helvetica, sans-serif, Marlett" color="#FFFFFF" > 
+    					Time</font></div></td>
+    				<td width="22%"><div align="left"><font size="2" face="Arial, Helvetica, sans-serif, Marlett" color="#FFFFFF" > 
+    					System&nbsp;Startup&nbsp;Time</font></div></td>
+    				<td width="34%"><div align="left"><font size="2" face="Arial, Helvetica, sans-serif, Marlett" color="#FFFFFF" > 
+    					Event</font></div></td>
+  				</tr>
+  			</table></font></div></td>
+	</tr>	
+	<tr>
+		<td width="5%"><div align="left"><font size="2" face="Arial, Helvetica, sans-serif, Marlett">
+    		</font></div></td>
+    	<td width="95%"><div align="left"><font size="2" face="Arial, Helvetica, sans-serif, Marlett">    	
+						<iframe name="Show_frame" src="/goform/EventLogList?setclear=0&selectlist=1200" width="637" height="320" marginHeight="0" marginWidth="0" frameBorder="0" >
+			</iframe></font></div></td>
+	</tr>
+	<tr>
+        <td width="5%"><div align="left"><font size="2" face="Arial, Helvetica, sans-serif, Marlett">
+    		</font></div></td>
+        <td width="637"><div align="center"><font size="2" face="Arial, Helvetica, sans-serif, Marlett"> 
+        	<input type="image" name="Clear_Log_Submit" src="clear_button.gif" onClick="doClear()"></font></div></td>
+    </tr>
+</table>
+</div>
+</form>
+</body>
+</html>
