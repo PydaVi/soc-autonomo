@@ -73,11 +73,11 @@ soc-autonomo/
 
 ## 🚧 Roadmap (Próximos passos)
 
-* \[+] Módulo adicional para análise de comportamento (ex: C2, beaconing)
-* \[+] Detecção baseada em Sigma Rules
-* \[+] Integração com MISP, VirusTotal ou AbuseIPDB
-* \[+] Alertas automatizados e respostas com scripts
-* \[+] Interface web simplificada
+* \[+] Orquestração de resposta a incidentes com enriquecimento de logs.
+* \[+] Detecção baseada em Elastic Security Rules
+* \[+] Automação e Orquestração de Resposta a Incidentes (SOAR)
+* \[+] Versão para deploy em ambiente de nuvem com kubernetes
+* \[+] Validação de ambiente com BAS
 
 ## 🤝 Contribuindo
 
