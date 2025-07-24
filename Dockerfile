@@ -25,5 +25,5 @@ RUN curl -L -O https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-8.
 ENV PATH="/opt/zeek/bin:/usr/share/filebeat:${PATH}"
 COPY modules/00-pcap-forensics/zeek/config/local.zeek /opt/zeek/share/zeek/site/local.zeek
 COPY filebeat.yml /usr/share/filebeat/filebeat.yml 
-COPY /modules/00-pcap-forensics/scripts/process_pcap.sh /process_pcap.sh
+COPY /modules/00-pcap-forensics/scripts/process_pcap_zeek.sh /process_pcap_zeek.sh
 WORKDIR /logs

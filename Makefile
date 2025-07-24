@@ -30,13 +30,11 @@ clean:
 # Executa análise de um pcap com Zeek e Suricata
 analyze:
 	@echo ">> Rodando análise com Zeek e Suricata"
-	sudo zeek -r $(PCAP_DIR)/sample.pcap -C
-	sudo suricata -r $(PCAP_DIR)/sample.pcap -l output/
+	$(DOCKER_COMPOSE) restart zeek suricata > /dev/null 2>&1
 
 # Roda os scripts de parsing
 parse:
 	$(DOCKER_COMPOSE) exec filebeat filebeat setup
-
 
 # Ajuda
 help:
