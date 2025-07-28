@@ -1,96 +1,109 @@
 # SOC Autônomo
 
-Análise de pacotes de rede com foco em cibersegurança usando ferramentas como Suricata, Zeek e a stack Elastic.
+> 🇧🇷 [Leia esta página em português](./README.pt-br.md)
 
-> Uma abordagem open source, leve, modular e portátil para investigação de arquivos PCAP sob a perspectiva da segurança da informação.
+Network packet analysis focused on cybersecurity using tools like Suricata, Zeek, and the Elastic stack.
+
+> An open source, lightweight, modular, and portable approach to investigating PCAP files from an information security perspective.
 
 ---
 
-## 🎯 Objetivo
+## 🎯 Purpose
 
-Este projeto nasceu como parte da minha jornada prática em cibersegurança, especialmente durante os estudos para a certificação **CompTIA Security+**. Buscando compreender melhor ataques reais por meio da análise forense, encontrei dificuldade em acessar laboratórios que fossem gratuitos ou que funcionassem em máquinas mais modestas.
+This project was born as part of my hands-on cybersecurity learning journey, especially during my studies for the **CompTIA Security+** certification. While trying to understand real-world attacks through forensic analysis, I found it difficult to access free labs or tools that would run on modest machines.
 
-Assim, utilizando ferramentas open source, e uma arquitetura baseada em orquestração de containers, criei este ambiente para suprir essa necessidade pessoal. Ao torná-lo público, minha intenção é ajudar a democratizar o acesso a ferramentas de cibersegurança, oferecendo uma solução local, leve e sem dependências externas, mas com alto poder de análise.
+Using open source tools and a container-based architecture, I created this environment to meet that personal need. By making it public, my goal is to help **democratize access to cybersecurity tools**, offering a local, lightweight solution with no external dependencies, but with high analytical capabilities.
 
-## 🔍 O que o projeto faz?
+---
 
-* Analisa arquivos `.pcap` com **Zeek** e **Suricata**, gerando logs de eventos de rede.
-* Integra os logs à stack **Elastic (Elasticsearch, Kibana e Filebeat)** para análise e visualização.
-* Apresenta um dashboard pré-configurado para facilitar a investigação de incidentes.
+## 🔍 What does the project do?
 
-## 🧱 Estrutura Modular
+* Analyzes `.pcap` files with **Zeek** and **Suricata**, generating network event logs.
+* Integrates logs into the **Elastic stack (Elasticsearch, Kibana, and Filebeat)** for centralized visualization and investigation.
+* Includes pre-configured dashboards to support quick forensic analysis and incident response.
 
-O projeto é construído em módulos independentes e reaproveitáveis. Isso permite:
+---
 
-* Facilidade na inclusão de novas funcionalidades e ferramentas
-* Roda com `Docker` e `docker-compose`, tornando o uso de recurso da máquina altamente eficiente
-* Scripts auxiliares com `bash` para automação
+## 🧱 Modular Architecture
 
-## 📦 Como usar
+The project is built on independent, reusable modules. This provides:
 
-1. **Clone o repositório**
+* Easy integration of new functionalities and tools
+* Runs with `Docker` and `docker-compose`, making resource usage efficient
+* Helper scripts written in `bash` for automation
+
+---
+
+## 📦 How to use
+
+1. **Clone the repository**:
 
 ```bash
 git clone https://github.com/PydaVi/soc-autonomo.git
 cd soc-autonomo
 ```
 
-2. **Permissione os arquivos filebeat.yml e requisitos.sh**:
+2. **Set permissions for filebeat.yml and requisitos.sh**:
 
-```
+```bash
 sudo chown root:root filebeat.yml
 sudo chmod +x requisitos.sh
 ```
 
-3. **Prepare o seu ambiente com os requisitos, se necessário**:
+3. **Install dependencies (if needed)**:
 
-```
+```bash
 sudo ./requisitos.sh
 ```
 
-
-4. **Adicione seus arquivos `.pcap`** na pasta:
+4. **Add your `.pcap` files to:**
 
 ```
 modules/00-pcap-forensics/sample-pcaps/
 ```
 
-5. **Execute o projeto:**
+5. **Run the environment**:
 
 ```bash
 make up
 ```
 
-6. **Configure o parseamento dos logs e carregamento de dashboards:**
+6. **Parse logs and load dashboards**:
 
 ```bash
 make parse
 ```
 
+7. **Access Kibana** at `http://localhost:5601` to explore the dashboards.
 
-7. **Acesse o Kibana** em `http://localhost:5601` e explore os dashboards.
-
-8. **Para derrubar os containers:**
+8. **Tear down the containers**:
 
 ```bash
 make down
 ```
 
-## 🚧 Roadmap (Próximos passos)
+---
 
-* \[+] Orquestração de resposta a incidentes com enriquecimento de logs.
-* \[+] Versão para deploy em ambiente AWS com terraform e kubernetes
+## ⚠️ Roadmap (Upcoming features)
 
-## 🤝 Contribuindo
+* \[+] Automated incident response orchestration with log enrichment
+* \[+] Deployment-ready version for AWS using Terraform and Kubernetes
 
-Pull requests são bem-vindos! Se você tem ideias, encontrou bugs ou deseja propor novos módulos, abra uma issue ou envie sua contribuição.
+---
 
-## 🛡 Licença
+## 🤝 Contributing
 
-Distribuído sob a licença MIT.
+Pull requests are welcome! If you have ideas, found bugs, or would like to propose new modules, feel free to open an issue or submit a PR.
 
-## 👨‍💻 Autor
+---
+
+## 🛡 License
+
+Distributed under the MIT License.
+
+---
+
+## 👨‍💻 Author
 
 **Fabio Augustto**
-
-Analista de Infraestrutura e Cibersegurança.
+Infrastructure and Cybersecurity Analyst.
