@@ -44,35 +44,35 @@ sudo chown root:root filebeat.yml
 sudo chmod +x requisitos.sh
 ```
 
-2. **Prepare o seu ambiente com os requisitos, se necessário**:
+3. **Prepare o seu ambiente com os requisitos, se necessário**:
 
 ```
 sudo ./requisitos.sh
 ```
 
 
-3. **Adicione seus arquivos `.pcap`** na pasta:
+4. **Adicione seus arquivos `.pcap`** na pasta:
 
 ```
 modules/00-pcap-forensics/sample-pcaps/
 ```
 
-4. **Execute o projeto:**
+5. **Execute o projeto:**
 
 ```bash
 make up
 ```
 
-4. **Configure o parseamento dos logs e carregamento de dashboards:**
+6. **Configure o parseamento dos logs e carregamento de dashboards:**
 
 ```bash
 make parse
 ```
 
 
-5. **Acesse o Kibana** em `http://localhost:5601` e explore os dashboards.
+7. **Acesse o Kibana** em `http://localhost:5601` e explore os dashboards.
 
-6. **Para derrubar os containers:**
+8. **Para derrubar os containers:**
 
 ```bash
 make down
