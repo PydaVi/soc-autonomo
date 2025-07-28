@@ -5,8 +5,8 @@ services:
     build: .
     volumes:
       - ./modules/00-pcap-forensics/scripts:/scripts
-      - ./modules/00-pcap-forensics/sample-pcaps:/pcap-input  # Somente leitura
-      - ./modules/00-pcap-forensics/zeek/logs:/usr/local/zeek/spool/logs  # PADRÃO do Zeek
+      - ./modules/00-pcap-forensics/sample-pcaps:/pcap-input  
+      - ./modules/00-pcap-forensics/zeek/logs:/usr/local/zeek/spool/logs  
       - ./modules/00-pcap-forensics/zeek/config/local.zeek:/usr/local/zeek/share/zeek/site/local.zeek
     command: ["/bin/bash", "-c", "/scripts/process_pcap_zeek.sh"]
 

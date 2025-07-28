@@ -37,47 +37,51 @@ git clone https://github.com/PydaVi/soc-autonomo.git
 cd soc-autonomo
 ```
 
-2. **Adicione seus arquivos `.pcap`** na pasta:
+2. **Permissione os arquivos filebeat.yml e requisitos.sh**:
+
+```
+sudo chown root:root filebeat.yml
+sudo chmod +x requisitos.sh
+```
+
+2. **Prepare o seu ambiente com os requisitos, se necessário**:
+
+```
+sudo ./requisitos.sh
+```
+
+
+3. **Adicione seus arquivos `.pcap`** na pasta:
 
 ```
 modules/00-pcap-forensics/sample-pcaps/
 ```
 
-3. **Execute o projeto:**
+4. **Execute o projeto:**
 
 ```bash
 make up
 ```
 
-4. **Acesse o Kibana** em `http://localhost:5601` e explore os dashboards.
+4. **Configure o parseamento dos logs e carregamento de dashboards:**
 
-5. **Para derrubar os containers:**
+```bash
+make parse
+```
+
+
+5. **Acesse o Kibana** em `http://localhost:5601` e explore os dashboards.
+
+6. **Para derrubar os containers:**
 
 ```bash
 make down
 ```
 
-## 📁 Estrutura de Diretórios
-
-```
-soc-autonomo/
-├── docker-compose.yml         # Orquestração dos containers
-├── Makefile                   # Automatiza comandos principais
-├── modules/
-│   └── 00-pcap-forensics/
-│       ├── sample-pcaps/      # Onde você coloca seus arquivos .pcap
-│       ├── scripts/           # Scripts auxiliares para processar PCAPs
-│       └── zeek/logs/        # Logs gerados pelo Zeek
-├── elastic/                   # Configurações do Filebeat, Kibana e Elasticsearch
-```
-
 ## 🚧 Roadmap (Próximos passos)
 
 * \[+] Orquestração de resposta a incidentes com enriquecimento de logs.
-* \[+] Detecção baseada em Elastic Security Rules
-* \[+] Automação e Orquestração de Resposta a Incidentes (SOAR)
-* \[+] Versão para deploy em ambiente de nuvem com kubernetes
-* \[+] Validação de ambiente com BAS
+* \[+] Versão para deploy em ambiente AWS com terraform e kubernetes
 
 ## 🤝 Contribuindo
 
@@ -90,4 +94,5 @@ Distribuído sob a licença MIT.
 ## 👨‍💻 Autor
 
 **Fabio Augustto**
+
 Analista de Infraestrutura e Cibersegurança.

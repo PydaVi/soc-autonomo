@@ -1,6 +1,6 @@
 filebeat.config.modules:
-  enabled: false  # Desativa TODOS os módulos (incluindo Zeek)
-
+  enabled: false  
+  
 filebeat.modules:
   - module: zeek
     connection:

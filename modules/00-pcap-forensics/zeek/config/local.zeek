@@ -7,4 +7,4 @@
 @load policy/tuning/json-logs.zeek
 redef LogAscii::use_json = T;
 redef LogAscii::json_timestamps = JSON::TS_ISO8601;
-redef ignore_checksums = T;  # Ignora checksums inválidos (útil para PCAPs)
+redef ignore_checksums = T;  # Ignora checksums inválidos
