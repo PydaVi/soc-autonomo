@@ -14,6 +14,8 @@ This project was born as part of my hands-on cybersecurity learning journey, esp
 
 Using open source tools and a container-based architecture, I created this environment to meet that personal need. By making it public, my goal is to help **democratize access to cybersecurity tools**, offering a local, lightweight solution with no external dependencies, but with high analytical capabilities.
 
+> ⚠️ **Note:** This environment was developed and tested on **Linux (Ubuntu 24.04)** and is also compatible with **WSL (Windows Subsystem for Linux)**. It may not work properly on native Windows or macOS systems.
+
 ---
 
 ## 🔍 What does the project do?
@@ -62,6 +64,16 @@ sudo ./requisitos.sh
 modules/00-pcap-forensics/sample-pcaps/
 ```
 
+> 💡 **Example PCAP included**:
+> Inside the `sample-pcaps/` folder, you'll find a test PCAP file from the PCAP4SICS dataset in a `.zip` format.
+> To try it out quickly:
+>
+> ```bash
+> unzip /modules/00-pcap-forensics/sample-pcaps/4SICS-GeekLounge-151021.zip -d /modules/00-pcap-forensics/sample-pcaps/
+> ```
+>
+> Credits to **PCAP4SICS** for the dataset.
+
 5. **Run the environment**:
 
 ```bash
@@ -106,4 +118,5 @@ Distributed under the MIT License.
 ## 👨‍💻 Author
 
 **Fabio Augustto**
+
 Infrastructure and Cybersecurity Analyst.
